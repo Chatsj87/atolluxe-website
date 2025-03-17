@@ -1,0 +1,1268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales | Atolluxe</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* Base Styles - Same as previous pages */
+        :root {
+            /* Color Palette */
+            --olive-dark: #556b2f;
+            --olive-medium: #708238;
+            --olive-light: #8a9a5b;
+            --olive-pale: #b9c49c;
+            --cream: #f5f5dc;
+            --light-grey: #e5e5e5;
+            --medium-grey: #a9a9a9;
+            --dark-grey: #333333;
+            --black: #121212;
+            --white: #ffffff;
+            
+            /* Typography */
+            --font-heading: 'Cormorant Garamond', serif;
+            --font-body: 'Montserrat', sans-serif;
+            
+            /* Spacing */
+            --spacing-xs: 0.5rem;
+            --spacing-sm: 1rem;
+            --spacing-md: 2rem;
+            --spacing-lg: 4rem;
+            --spacing-xl: 8rem;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: var(--font-body);
+            font-weight: 300;
+            color: var(--dark-grey);
+            background-color: var(--cream);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-heading);
+            font-weight: 400;
+            line-height: 1.2;
+            color: var(--olive-dark);
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: var(--spacing-md);
+            font-weight: 300;
+        }
+        
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: var(--spacing-sm);
+            position: relative;
+            display: inline-block;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background-color: var(--olive-medium);
+            transition: width 0.3s ease;
+        }
+        
+        h2:hover::after {
+            width: 100%;
+        }
+        
+        h3 {
+            font-size: 1.8rem;
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        p {
+            margin-bottom: var(--spacing-md);
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+        
+        a {
+            color: var(--olive-dark);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        a:hover {
+            color: var(--olive-medium);
+        }
+        
+        /* Layout & Header - Same as previous pages */
+        .container {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+        }
+        
+        .section {
+            padding: var(--spacing-xl) 0;
+            position: relative;
+        }
+        
+        .section:nth-child(even) {
+            background-color: var(--white);
+        }
+        
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: rgba(245, 245, 220, 0.95);
+            backdrop-filter: blur(5px);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.5s ease;
+        }
+        
+        header.scrolled {
+            padding: 0.5rem 0;
+            background-color: rgba(245, 245, 220, 0.98);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem var(--spacing-md);
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 50px;
+            transition: all 0.3s ease;
+        }
+        
+        header.scrolled .logo img {
+            height: 40px;
+        }
+        
+        .logo-text {
+            margin-left: var(--spacing-xs);
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            font-weight: 400;
+            color: var(--olive-dark);
+            letter-spacing: 2px;
+        }
+        
+        /* Navigation - Same as previous pages */
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav li {
+            margin-left: var(--spacing-md);
+        }
+        
+        nav a {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 400;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+        
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background-color: var(--olive-medium);
+            transition: width 0.3s ease;
+        }
+        
+        nav a:hover::after {
+            width: 100%;
+        }
+        
+        nav a.active::after {
+            width: 100%;
+        }
+        
+        /* Page Header */
+        .page-header {
+            height: 50vh;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding-top: 100px;
+            background-color: var(--light-grey);
+            overflow: hidden;
+        }
+        
+        .page-header-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('/api/placeholder/1400/800');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.8;
+        }
+        
+        .page-header-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(18, 18, 18, 0.4), rgba(85, 107, 47, 0.7));
+        }
+        
+        .page-header-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            color: var(--white);
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s ease forwards 0.5s;
+        }
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .page-header h1 {
+            color: var(--white);
+            font-size: 4rem;
+            margin-bottom: var(--spacing-sm);
+            line-height: 1.2;
+        }
+        
+        .page-header p {
+            font-size: 1.2rem;
+            margin-bottom: 0;
+            max-width: 600px;
+        }
+        
+        /* AI Agent Section */
+        .ai-agent-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .ai-agent-heading {
+            margin-bottom: var(--spacing-lg);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s ease;
+        }
+        
+        .ai-agent-heading.in-view {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .agent-avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background-color: var(--light-grey);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: var(--spacing-md);
+            opacity: 0;
+            transform: scale(0.8);
+            transition: all 0.5s ease 0.3s;
+            overflow: hidden;
+        }
+        
+        .agent-avatar.in-view {
+            opacity: 1;
+            transform: scale(1);
+        }
+        
+        .agent-cta {
+            margin-top: var(--spacing-md);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease 0.6s;
+        }
+        
+        .agent-cta.in-view {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .cta-btn {
+            display: inline-block;
+            background-color: var(--olive-dark);
+            color: var(--white);
+            padding: 1rem 2rem;
+            border: 1px solid var(--olive-dark);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: all 0.3s ease;
+            margin-right: var(--spacing-sm);
+        }
+        
+        .cta-btn:hover {
+            background-color: var(--olive-medium);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Downloads Section */
+        .downloads-section {
+            background-color: var(--white);
+        }
+        
+        .downloads-heading {
+            text-align: center;
+            margin-bottom: var(--spacing-lg);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s ease;
+        }
+        
+        .downloads-heading.in-view {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .downloads-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-md);
+        }
+        
+        .download-card {
+            background-color: var(--cream);
+            border-radius: 5px;
+            padding: var(--spacing-md);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        
+        .download-card.in-view {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .download-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .download-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background-color: rgba(85, 107, 47, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto var(--spacing-md);
+        }
+        
+        .download-icon svg {
+            width: 40px;
+            height: 40px;
+            color: var(--olive-dark);
+        }
+        
+        .download-title {
+            font-size: 1.5rem;
+            margin-bottom: var(--spacing-sm);
+            color: var(--olive-dark);
+            font-family: var(--font-heading);
+        }
+        
+        .download-description {
+            font-size: 0.9rem;
+            color: var(--medium-grey);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            background-color: transparent;
+            color: var(--olive-dark);
+            border: 1px solid var(--olive-dark);
+            padding: 0.8rem 1.5rem;
+            font-size: 0.9rem;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+        
+        .download-btn svg {
+            margin-left: 0.5rem;
+        }
+        
+        .download-btn:hover {
+            background-color: var(--olive-dark);
+            color: var(--white);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Project Showcase */
+        .project-showcase {
+            position: relative;
+            padding: var(--spacing-xl) 0;
+            overflow: hidden;
+        }
+        
+        .project-showcase::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('/api/placeholder/1400/800');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            opacity: 0.15;
+            z-index: -1;
+        }
+        
+        .showcase-heading {
+            text-align: center;
+            margin-bottom: var(--spacing-lg);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s ease;
+        }
+        
+        .showcase-heading.in-view {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .showcase-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-md);
+        }
+        
+        .showcase-card {
+            background-color: var(--white);
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        
+        .showcase-card.in-view {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .showcase-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .showcase-image {
+            height: 200px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .showcase-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .showcase-card:hover .showcase-image img {
+            transform: scale(1.1);
+        }
+        
+        .showcase-content {
+            padding: var(--spacing-md);
+        }
+        
+        .showcase-content h3 {
+            margin-bottom: var(--spacing-xs);
+            font-size: 1.5rem;
+        }
+        
+        .showcase-location {
+            display: block;
+            font-size: 0.9rem;
+            color: var(--medium-grey);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .showcase-price {
+            font-family: var(--font-heading);
+            font-size: 1.3rem;
+            color: var(--olive-dark);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        /* Page Transition - Same as previous pages */
+        .page-transition {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--olive-dark);
+            z-index: 9999;
+            transform: translateY(100%);
+            transition: transform 0.7s cubic-bezier(0.7, 0, 0.3, 1);
+        }
+        
+        .page-transition.active {
+            transform: translateY(0);
+        }
+        
+        .page-transition.exit {
+            transform: translateY(-100%);
+        }
+        
+        /* Footer - Same as previous pages */
+        footer {
+            background-color: var(--dark-grey);
+            color: var(--light-grey);
+            padding: var(--spacing-lg) 0;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-md);
+        }
+        
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .footer-logo img {
+            height: 40px;
+        }
+        
+        .footer-logo-text {
+            margin-left: var(--spacing-xs);
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            color: var(--white);
+            letter-spacing: 2px;
+        }
+        
+        .footer-heading {
+            font-size: 1.2rem;
+            margin-bottom: var(--spacing-sm);
+            color: var(--white);
+            position: relative;
+        }
+        
+        .footer-heading::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--olive-light);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: var(--spacing-xs);
+        }
+        
+        .footer-links a {
+            color: var(--light-grey);
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--olive-pale);
+            padding-left: 5px;
+        }
+        
+        .footer-contact p {
+            margin-bottom: var(--spacing-xs);
+            font-size: 0.9rem;
+        }
+        
+        .footer-social {
+            display: flex;
+            gap: var(--spacing-sm);
+            margin-top: var(--spacing-sm);
+        }
+        
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            background-color: var(--olive-dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            transition: all 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            background-color: var(--olive-medium);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: var(--spacing-lg);
+            margin-top: var(--spacing-lg);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.8rem;
+            color: var(--medium-grey);
+        }
+        
+        /* Media Queries */
+        @media (max-width: 991px) {
+            h1 {
+                font-size: 3rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            .page-header h1 {
+                font-size: 3.5rem;
+            }
+        }
+        
+        @media (max-width: 767px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .page-header h1 {
+                font-size: 2.8rem;
+            }
+            
+            .page-header p {
+                font-size: 1rem;
+            }
+            
+            .header-container {
+                flex-direction: column;
+                padding: 1rem var(--spacing-md);
+            }
+            
+            .logo {
+                margin-bottom: var(--spacing-sm);
+            }
+            
+            nav {
+                width: 100%;
+            }
+            
+            nav ul {
+                justify-content: space-between;
+            }
+            
+            nav li {
+                margin-left: 0;
+            }
+            
+            .download-card {
+                max-width: 350px;
+                margin: 0 auto;
+            }
+            
+            .showcase-card {
+                max-width: 350px;
+                margin: 0 auto;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .page-header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .page-header {
+                height: 40vh;
+            }
+            
+            .cta-btn {
+                display: block;
+                width: 100%;
+                margin-right: 0;
+                margin-bottom: var(--spacing-sm);
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Page Transition -->
+    <div class="page-transition"></div>
+    
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="/api/placeholder/100/50" alt="Atolluxe Logo">
+                <span class="logo-text">ATOLLUXE</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="locations.html">Locations</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="news.html">News</a></li>
+                    <li><a href="sales.html" class="active">Sales</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="page-header-bg"></div>
+        <div class="page-header-overlay"></div>
+        <div class="container">
+            <div class="page-header-content">
+                <h1>Sales & Information</h1>
+                <p>Discover exclusive investment opportunities in the Maldives and access resources to make informed decisions.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- AI Agent Section -->
+    <section class="section ai-agent-section">
+        <div class="container">
+            <div class="ai-agent-heading">
+                <h2>Talk to AI Agent Now</h2>
+                <p>Get instant answers to your questions about our properties, investment opportunities, and the Maldives real estate market.</p>
+            </div>
+            <div class="agent-avatar">
+                <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+            </div>
+            <div class="agent-cta">
+                <a href="#chat-modal" class="cta-btn">Start Conversation</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Downloads Section -->
+    <section class="section downloads-section">
+        <div class="container">
+            <div class="downloads-heading">
+                <h2>Downloads</h2>
+                <p>Access detailed information about our properties and investment opportunities</p>
+            </div>
+            <div class="downloads-grid">
+                <div class="download-card" style="transition-delay: 0.1s;">
+                    <div class="download-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                    </div>
+                    <h3 class="download-title">Pricing Sheet</h3>
+                    <p class="download-description">Comprehensive pricing details for all our properties, including payment plans and estimated returns.</p>
+                    <a href="#" class="download-btn">
+                        Download
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                    </a>
+                </div>
+                <div class="download-card" style="transition-delay: 0.3s;">
+                    <div class="download-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+                    </div>
+                    <h3 class="download-title">Project Brochure</h3>
+                    <p class="download-description">Detailed brochures for each of our exclusive properties with floor plans and specifications.</p>
+                    <a href="#" class="download-btn">
+                        Download
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                    </a>
+                </div>
+                <div class="download-card" style="transition-delay: 0.5s;">
+                    <div class="download-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+                    </div>
+                    <h3 class="download-title">Datasheet</h3>
+                    <p class="download-description">Essential facts and figures about the Maldives real estate market, tourism growth, and investment potential.</p>
+                    <a href="#" class="download-btn">
+                        Download
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Project Showcase -->
+    <section class="section project-showcase">
+        <div class="container">
+            <div class="showcase-heading">
+                <h2>Featured Properties</h2>
+                <p>Explore our exclusive collection of luxury properties in the Maldives</p>
+            </div>
+            <div class="showcase-grid">
+                <div class="showcase-card" style="transition-delay: 0.1s;">
+                    <div class="showcase-image">
+                        <img src="/api/placeholder/400/300" alt="The S. Villa at Dhiffushi">
+                    </div>
+                    <div class="showcase-content">
+                        <h3>The S. Villa</h3>
+                        <span class="showcase-location">@ Dhiffushi</span>
+                        <div class="showcase-price">From $495,000</div>
+                        <a href="projects.html" class="cta-btn">View Details</a>
+                    </div>
+                </div>
+                <div class="showcase-card" style="transition-delay: 0.3s;">
+                    <div class="showcase-image">
+                        <img src="/api/placeholder/400/300" alt="The Shores at Hanimadhoo">
+                    </div>
+                    <div class="showcase-content">
+                        <h3>The Shores</h3>
+                        <span class="showcase-location">@ Hanimadhoo</span>
+                        <div class="showcase-price">From $595,000</div>
+                        <a href="projects.html" class="cta-btn">View Details</a>
+                    </div>
+                </div>
+                <div class="showcase-card" style="transition-delay: 0.5s;">
+                    <div class="showcase-image">
+                        <img src="/api/placeholder/400/300" alt="The Palms at Thoddoo">
+                    </div>
+                    <div class="showcase-content">
+                        <h3>The Palms</h3>
+                        <span class="showcase-location">@ Thoddoo</span>
+                        <div class="showcase-price">From $395,000</div>
+                        <a href="projects.html" class="cta-btn">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div>
+                    <div class="footer-logo">
+                        <img src="/api/placeholder/100/50" alt="Atolluxe Logo">
+                        <span class="footer-logo-text">ATOLLUXE</span>
+                    </div>
+                    <p>Luxury investment properties in the paradise islands of the Maldives. Discover exceptional opportunities with high returns in the world's most sought-after destination.</p>
+                </div>
+                <div>
+                    <h3 class="footer-heading">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="locations.html">Locations</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="news.html">News</a></li>
+                        <li><a href="sales.html">Sales</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="footer-heading">Contact</h3>
+                    <div class="footer-contact">
+                        <p>Email: info@atolluxe.com</p>
+                        <p>Phone: +960 123 4567</p>
+                        <p>Address: Male, Maldives</p>
+                        <div class="footer-social">
+                            <a href="#" class="social-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                            </a>
+                            <a href="#" class="social-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                            </a>
+                            <a href="#" class="social-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+                            </a>
+                            <a href="#" class="social-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Atolluxe. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chat Modal (Hidden by default) -->
+    <div id="chat-modal" class="chat-modal">
+        <div class="chat-container">
+            <div class="chat-header">
+                <h3>Atolluxe AI Assistant</h3>
+                <div class="chat-close">×</div>
+            </div>
+            <div class="chat-messages">
+                <div class="message bot">
+                    <div class="message-content">
+                        Hello! I'm your Atolluxe AI Assistant. How can I help you with your property investment in the Maldives today?
+                    </div>
+                </div>
+            </div>
+            <div class="chat-input">
+                <input type="text" placeholder="Type your message here...">
+                <button class="send-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add additional CSS for chat modal -->
+    <style>
+        .chat-modal {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 350px;
+            height: 500px;
+            background-color: var(--white);
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            display: none;
+            z-index: 1500;
+            overflow: hidden;
+        }
+        
+        .chat-modal.active {
+            display: block;
+            animation: fadeIn 0.3s ease forwards;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .chat-container {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        
+        .chat-header {
+            padding: 15px;
+            background-color: var(--olive-dark);
+            color: var(--white);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .chat-header h3 {
+            margin: 0;
+            color: var(--white);
+            font-size: 1.2rem;
+        }
+        
+        .chat-close {
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        
+        .chat-close:hover {
+            transform: rotate(90deg);
+        }
+        
+        .chat-messages {
+            flex: 1;
+            padding: 15px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .message {
+            display: flex;
+            max-width: 80%;
+        }
+        
+        .message.user {
+            margin-left: auto;
+        }
+        
+        .message-content {
+            padding: 10px 15px;
+            border-radius: 15px;
+            background-color: var(--light-grey);
+        }
+        
+        .message.user .message-content {
+            background-color: var(--olive-light);
+            color: var(--white);
+        }
+        
+        .chat-input {
+            display: flex;
+            padding: 15px;
+            border-top: 1px solid var(--light-grey);
+        }
+        
+        .chat-input input {
+            flex: 1;
+            padding: 10px 15px;
+            border: 1px solid var(--light-grey);
+            border-radius: 50px;
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            outline: none;
+        }
+        
+        .chat-input input:focus {
+            border-color: var(--olive-light);
+        }
+        
+        .send-btn {
+            width: 40px;
+            height: 40px;
+            margin-left: 10px;
+            background-color: var(--olive-dark);
+            color: var(--white);
+            border: none;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .send-btn:hover {
+            background-color: var(--olive-medium);
+        }
+    </style>
+
+    <!-- JavaScript -->
+    <script>
+        // Intersection Observer for animations
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('in-view');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Elements to observe
+        const elementsToAnimate = [
+            document.querySelector('.ai-agent-heading'),
+            document.querySelector('.agent-avatar'),
+            document.querySelector('.agent-cta'),
+            document.querySelector('.downloads-heading'),
+            document.querySelector('.showcase-heading')
+        ];
+
+        // Add download cards
+        document.querySelectorAll('.download-card').forEach(card => {
+            elementsToAnimate.push(card);
+        });
+
+        // Add showcase cards
+        document.querySelectorAll('.showcase-card').forEach(card => {
+            elementsToAnimate.push(card);
+        });
+
+        // Start observing
+        elementsToAnimate.forEach(element => {
+            if (element) observer.observe(element);
+        });
+
+        // Header scroll effect
+        const header = document.querySelector('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Page transition
+        const pageTransition = document.querySelector('.page-transition');
+        const links = document.querySelectorAll('a:not([target="_blank"]):not([href^="#"])');
+
+        links.forEach(link => {
+            link.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                
+                e.preventDefault();
+                
+                // Start transition animation
+                pageTransition.classList.add('active');
+                
+                setTimeout(() => {
+                    window.location.href = href;
+                }, 700);
+            });
+        });
+
+        // Page load animation
+        window.addEventListener('load', () => {
+            pageTransition.classList.add('exit');
+            
+            setTimeout(() => {
+                pageTransition.classList.remove('active');
+                pageTransition.classList.remove('exit');
+            }, 700);
+        });
+        
+        // Chat Modal Functionality
+        const chatTrigger = document.querySelector('a[href="#chat-modal"]');
+        const chatModal = document.getElementById('chat-modal');
+        const chatClose = document.querySelector('.chat-close');
+        const chatInput = document.querySelector('.chat-input input');
+        const sendBtn = document.querySelector('.send-btn');
+        const chatMessages = document.querySelector('.chat-messages');
+        
+        // Toggle chat modal
+        chatTrigger.addEventListener('click', function(e) {
+            e.preventDefault();
+            chatModal.classList.add('active');
+            chatInput.focus();
+        });
+        
+        // Close chat modal
+        chatClose.addEventListener('click', () => {
+            chatModal.classList.remove('active');
+        });
+        
+        // Send message on enter key
+        chatInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' && chatInput.value.trim() !== '') {
+                sendMessage();
+            }
+        });
+        
+        // Send message on button click
+        sendBtn.addEventListener('click', () => {
+            if (chatInput.value.trim() !== '') {
+                sendMessage();
+            }
+        });
+        
+        // Function to send message
+        function sendMessage() {
+            const userMessage = chatInput.value.trim();
+            
+            // Add user message to chat
+            const userMessageElement = document.createElement('div');
+            userMessageElement.className = 'message user';
+            userMessageElement.innerHTML = `<div class="message-content">${userMessage}</div>`;
+            chatMessages.appendChild(userMessageElement);
+            
+            // Clear input
+            chatInput.value = '';
+            
+            // Scroll to bottom
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+            
+            // Simulate AI response after a short delay
+            setTimeout(() => {
+                // Sample responses based on keywords
+                let response;
+                
+                if (userMessage.toLowerCase().includes('price') || userMessage.toLowerCase().includes('cost')) {
+                    response = "Our properties start from $395,000 for The Palms at Thoddoo. Would you like me to send you our detailed pricing sheet?";
+                } else if (userMessage.toLowerCase().includes('location') || userMessage.toLowerCase().includes('where')) {
+                    response = "Our properties are located across four stunning atolls in the Maldives: Kaafu, Alif, Baa, and Vaavu. Each offers unique investment opportunities and natural beauty.";
+                } else if (userMessage.toLowerCase().includes('return') || userMessage.toLowerCase().includes('roi')) {
+                    response = "Our properties typically generate 8-12% annual returns through rental income. The tourism growth in the Maldives has been consistently strong, with visitor numbers increasing by 15% year-over-year.";
+                } else {
+                    response = "Thank you for your interest. Our sales team is available to answer any specific questions about our properties. Would you like me to arrange a call with one of our investment advisors?";
+                }
+                
+                // Add AI response to chat
+                const botMessageElement = document.createElement('div');
+                botMessageElement.className = 'message bot';
+                botMessageElement.innerHTML = `<div class="message-content">${response}</div>`;
+                chatMessages.appendChild(botMessageElement);
+                
+                // Scroll to bottom
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }, 1000);
+        }
+    </script>
+</body>
+</html>
