@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atolluxe | Luxury Properties in The Maldives</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Color Palette */
+            --olive-dark: #556b2f;
+            --olive-medium: #708238;
+            --olive-light: #8a9a5b;
+            --olive-pale: #b9c49c;
+            --cream: #f5f5dc;
+            --light-grey: #e5e5e5;
+            --medium-grey: #a9a9a9;
+            --dark-grey: #333333;
+            --black: #121212;
+            --white: #ffffff;
+            
+            /* Typography */
+            --font-heading: 'Cormorant Garamond', serif;
+            --font-body: 'Montserrat', sans-serif;
+            
+            /* Spacing */
+            --spacing-xs: 0.5rem;
+            --spacing-sm: 1rem;
+            --spacing-md: 2rem;
+            --spacing-lg: 4rem;
+            --spacing-xl: 8rem;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: var(--font-body);
+            font-weight: 300;
+            color: var(--dark-grey);
+            background-color: var(--cream);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-heading);
+            font-weight: 400;
+            line-height: 1.2;
+            color: var(--olive-dark);
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: var(--spacing-md);
+            font-weight: 300;
+        }
+        
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: var(--spacing-sm);
+            position: relative;
+            display: inline-block;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background-color: var(--olive-medium);
+            transition: width 0.3s ease;
+        }
+        
+        h2:hover::after {
+            width: 100%;
+        }
+        
+        h3 {
+            font-size: 1.8rem;
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        p {
+            margin-bottom: var(--spacing-md);
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+        
+        a {
+            color: var(--olive-dark);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        a:hover {
+            color: var(--olive-medium);
+        }
+        
+        /* Layout */
+        .container {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+        }
+        
+        .section {
+            padding: var(--spacing-xl) 0;
+            position: relative;
+        }
+        
+        .section:nth-child(even) {
+            background-color: var(--white);
+        }
+        
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: rgba(245, 245, 220, 0.95);
+            backdrop-filter: blur(5px);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.5s ease;
+        }
+        
+        header.scrolled {
+            padding: 0.5rem 0;
+            background-color: rgba(245, 245, 220, 0.98);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem var(--spacing-md);
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 50px;
+            transition: all 0.3s ease;
+        }
+        
+        header.scrolled .logo img {
+            height: 40px;
+        }
+        
+        .logo-text {
+            margin-left: var(--spacing-xs);
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            font-weight: 400;
+            color: var(--olive-dark);
+            letter-spacing: 2px;
+        }
+        
+        /* Navigation */
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav li {
+            margin-left: var(--spacing-md);
+        }
+        
+        nav a {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 400;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+        
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background-color: var(--olive-medium);
+            transition: width 0.3s ease;
+        }
+        
+        nav a:hover::after {
+            width: 100%;
+        }
+        
+        nav a.active::after {
+            width: 100%;
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            background-color: var(--light-grey);
+            overflow: hidden;
+        }
+        
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://images.unsplash.com/photo-1573843981267-be1999ff37cd?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            animation: zoomIn 20s infinite alternate;
+            opacity: 0.8;
+        }
+        
+        @keyframes zoomIn {
+            0% {
+                transform: scale(1);
+            }
+            100% {
+                transform: scale(1.1);
+            }
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(18, 18, 18, 0.4), rgba(85, 107, 47, 0.7));
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            color: var(--white);
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s ease forwards 0.5s;
+        }
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .hero h1 {
+            color: var(--white);
+            font-size: 4.5rem;
+            margin-bottom: var(--spacing-sm);
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: var(--spacing-md);
+            max-width: 600px;
+        }
+        
+        .cta-btn {
+            display: inline-block;
+            background-color: var(--olive-dark);
+            color: var(--white);
+            padding: 1rem 2rem;
+            border: 1px solid var(--olive-dark);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: all 0.3s ease;
+            margin-right: var(--spacing-sm);
+        }
+        
+        .cta-btn:hover {
+            background-color: transparent;
+            color: var(--white);
+        }
+        
+        .cta-btn.secondary {
+            background-color: transparent;
+            border: 1px solid var(--white);
+        }
+        
+        .cta-btn.secondary:hover {
+            background-color: var(--white);
+            color: var(--olive-dark);
+        }
+        
+        /* Niche Section */
+        .niche {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-lg);
+            align-items: center;
+        }
+        
+        .niche-content {
+            opacity: 0;
+            transform: translateX(-30px);
+            transition: all 1s ease;
+        }
+        
+        .niche-content.in-view {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .niche-image {
+            position: relative;
+            height: 500px;
+            opacity: 0;
+            transform: translateX(30px);
+            transition: all 1s ease 0.3s;
+            overflow: hidden;
+            border-radius: 5px;
+        }
+        
+        .niche-image.in-view {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .niche-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .niche-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        /* Projects Section */
+        .projects-heading {
+            text-align: center;
+            margin-bottom: var(--spacing-lg);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s ease;
+        }
+        
+        .projects-heading.in-view {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-md);
+        }
+        
+        .project-card {
+            background-color: var(--white);
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        
+        .project-card.in-view {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .project-image {
+            height: 250px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .project-card:hover .project-image img {
+            transform: scale(1.1);
+        }
+        
+        .project-content {
+            padding: var(--spacing-md);
+        }
+        
+        .project-content h3 {
+            margin-bottom: var(--spacing-xs);
+            color: var(--olive-dark);
+        }
+        
+        .project-location {
+            display: block;
+            font-size: 0.9rem;
+            color: var(--medium-grey);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .project-card .cta-btn {
+            font-size: 0.8rem;
+            padding: 0.8rem 1.5rem;
+            margin-top: var(--spacing-sm);
+        }
+        
+        /* Locations Section */
+        .locations {
+            background-color: var(--light-grey);
+        }
+        
+        .locations-heading {
+            text-align: center;
+            margin-bottom: var(--spacing-lg);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s ease;
+        }
+        
+        .locations-heading.in-view {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .locations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-md);
+        }
+        
+        .location-card {
+            position: relative;
+            height: 300px;
+            border-radius: 5px;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.5s ease;
+        }
+        
+        .location-card.in-view {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .location-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .location-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .location-card:hover .location-image img {
+            transform: scale(1.1);
+        }
+        
+        .location-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(18, 18, 18, 0.1), rgba(85, 107, 47, 0.8));
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: var(--spacing-md);
+            transition: background 0.3s ease;
+        }
+        
+        .location-card:hover .location-overlay {
+            background: linear-gradient(to bottom, rgba(18, 18, 18, 0.2), rgba(85, 107, 47, 0.9));
+        }
+        
+        .location-name {
+            color: var(--white);
+            font-size: 1.5rem;
+            margin-bottom: var(--spacing-xs);
+            transform: translateY(20px);
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+        
+        .location-description {
+            color: var(--white);
+            font-size: 0.9rem;
+            transform: translateY(20px);
+            opacity: 0;
+            transition: all 0.3s ease 0.1s;
+        }
+        
+        .location-card:hover .location-name,
+        .location-card:hover .location-description {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+        /* Smooth Page Transitions */
+        .page-transition {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--olive-dark);
+            z-index: 9999;
+            transform: translateY(100%);
+            transition: transform 0.7s cubic-bezier(0.7, 0, 0.3, 1);
+        }
+        
+        .page-transition.active {
+            transform: translateY(0);
+        }
+        
+        .page-transition.exit {
+            transform: translateY(-100%);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-grey);
+            color: var(--light-grey);
+            padding: var(--spacing-lg) 0;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-md);
+        }
+        
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .footer-logo img {
+            height: 40px;
+        }
+        
+        .footer-logo-text {
+            margin-left: var(--spacing-xs);
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            color: var(--white);
+            letter-spacing: 2px;
+        }
+        
+        .footer-heading {
+            font-size: 1.2rem;
+            margin-bottom: var(--spacing-sm);
+            color: var(--white);
+            position: relative;
+        }
+        
+        .footer-heading::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--olive-light);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: var(--spacing-xs);
+        }
+        
+        .footer-links a {
+            color: var(--light-grey);
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--olive-pale);
+            padding-left: 5px;
+        }
+        
+        .footer-contact p {
+            margin-bottom: var(--spacing-xs);
+            font-size: 0.9rem;
+        }
+        
+        .footer-social {
+            display: flex;
+            gap: var(--spacing-sm);
+            margin-top: var(--spacing-sm);
+        }
+        
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            background-color: var(--olive-dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            transition: all 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            background-color: var(--olive-medium);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: var(--spacing-lg);
+            margin-top: var(--spacing-lg);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.8rem;
+            color: var(--medium-grey);
+        }
+        
+        /* Media Queries */
+        @media (max-width: 991px) {
+            h1 {
+                font-size: 3rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+            
+            .niche {
+                grid-template-columns: 1fr;
+                gap: var(--spacing-md);
+            }
+            
+            .niche-image {
+                height: 400px;
+            }
+        }
+        
+        @media (max-width: 767px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .header-container {
+                flex-direction: column;
+                padding: 1rem var(--spacing-md);
+            }
+            
+            .logo {
+                margin-bottom: var(--spacing-sm);
+            }
+            
+            nav {
+                width: 100%;
+            }
+            
+            nav ul {
+                justify-content: space-between;
+            }
+            
+            nav li {
+                margin-left: 0;
+            }
+            
+            .project-card {
+                max-width: 400px;
+                margin: 0 auto;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero {
+                height: 90vh;
+            }
+            
+            .cta-btn {
+                display: block;
+                width: 100%;
+                margin-right: 0;
+                margin-bottom: var(--spacing-sm);
+            }
+            
+            .niche-image {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Page Transition -->
+    <div class="page-transition"></div>
+    
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="/api/placeholder/100/50" alt="Atolluxe Logo">
+                <span class="logo-text">ATOLLUXE</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="locations.html">Locations</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="news.html">News</a></li>
+                    <li><a href="sales.html">Sales</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1>Luxury Investment Properties in the Maldives</h1>
+                <p>Discover exclusive opportunities to invest in high-return properties across the pristine islands of the Maldives with Atolluxe, your premier luxury development partner.</p>
+                <a href="projects.html" class="cta-btn">Explore Projects</a>
+                <a href="contact.html" class="cta-btn secondary">Contact Us</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Niche Section -->
+    <section class="section">
+        <div class="container">
+            <div class="niche">
+                <div class="niche-content">
+                    <h2>The Niche</h2>
+                    <p>Atolluxe specializes in identifying and developing exceptional investment opportunities in the Maldives' rapidly growing tourism sector. Our properties are strategically located across various atolls to maximize returns while preserving the natural beauty that makes the Maldives a world-renowned destination.</p>
+                    <p>With over 20 years of combined expertise in luxury property development and tourism in the Maldives, our team curates investment opportunities with a focus on sustainability, authentic experiences, and long-term value growth.</p>
+                    <a href="about.html" class="cta-btn">Learn More</a>
+                </div>
+                <div class="niche-image">
+                    <img src="/api/placeholder/600/500" alt="Luxury villa in Maldives">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Projects Section -->
+    <section class="section">
+        <div class="container">
+            <div class="projects-heading">
+                <h2>Our Projects</h2>
+                <p>Discover our exclusive collection of premium properties across the Maldives</p>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card" style="transition-delay: 0.1s;">
+                    <div class="project-image">
+                        <img src="/api/placeholder/400/300" alt="The S. Villa at Dhiffushi">
+                    </div>
+                    <div class="project-content">
+                        <h3>The S. Villa</h3>
+                        <span class="project-location">@ Dhiffushi</span>
+                        <p>Exclusive beachfront villas with private pools and direct ocean access on the pristine island of Dhiffushi.</p>
+                        <a href="projects.html" class="cta-btn">View Details</a>
+                    </div>
+                </div>
+                <div class="project-card" style="transition-delay: 0.3s;">
+                    <div class="project-image">
+                        <img src="/api/placeholder/400/300" alt="The Shores at Hanimadhoo">
+                    </div>
+                    <div class="project-content">
+                        <h3>The Shores</h3>
+                        <span class="project-location">@ Hanimadhoo</span>
+                        <p>Contemporary waterfront residences featuring panoramic ocean views and sustainable design on Hanimadhoo Island.</p>
+                        <a href="projects.html" class="cta-btn">View Details</a>
+                    </div>
+                </div>
+                <div class="project-card" style="transition-delay: 0.5s;">
+                    <div class="project-image">
+                        <img src="/api/placeholder/400/300" alt="The Palms at Thoddoo">
+                    </div>
+                    <div class="project-content">
+                        <h3>The Palms</h3>
+                        <span class="project-location">@ Thoddoo</span>
+                        <p>Luxury resort-style properties surrounded by lush tropical gardens and white sand beaches on Thoddoo Island.</p>
+                        <a href="projects.html" class="cta-btn">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Locations Section -->
+    <section class="section locations">
+        <div class="container">
+            <div class="locations-heading">
+                <h2>The Locations</h2>
+                <p>Experience the unique beauty and investment potential of our carefully selected atolls</p>
+            </div>
+            <div class="locations-grid">
+                <div class="location-card" style="transition-delay: 0.1s;">
+                    <div class="location-image">
+                        <img src="/api/placeholder/400/300" alt="Kaafu Atoll">
+                    </div>
+                    <div class="location-overlay">
+                        <h3 class="location-name">Kaafu Atoll</h3>
+                        <p class="location-description">Home to the capital Malé and some of the most developed islands in the Maldives.</p>
+                    </div>
+                </div>
+                <div class="location-card" style="transition-delay: 0.3s;">
+                    <div class="location-image">
+                        <img src="/api/placeholder/400/300" alt="Alif Atoll">
+                    </div>
+                    <div class="location-overlay">
+                        <h3 class="location-name">Alif Atoll</h3>
+                        <p class="location-description">Known for its pristine dive sites and emerging tourist destinations.</p>
+                    </div>
+                </div>
+                <div class="location-card" style="transition-delay: 0.5s;">
+                    <div class="location-image">
+                        <img src="/api/placeholder/400/300" alt="Baa Atoll">
+                    </div>
+                    <div class="location-overlay">
+                        <h3 class="location-name">Baa Atoll</h3>
+                        <p class="location-description">UNESCO Biosphere Reserve with exceptional marine biodiversity.</p>
+                    </div>
+                </div>
+                <div class="location-card" style="transition-delay: 0.7s;">
+                    <div class="location-image">
+                        <img src="/api/placeholder/400/300" alt="Vaavu Atoll">
+                    </div>
+                    <div class="location-overlay">
+                        <h3 class="location-name">Vaavu Atoll</h3>
+                        <p class="location-description">Famous for its channels, thriving coral reefs, and untouched beaches.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div>
+                    <div class="footer-logo">
+                        <img src="/api/placeholder/100/50" alt="Atolluxe Logo">
+                        <span class="footer-logo-text">ATOLLUXE</span>
+                    </div>
+                    <p>Luxury investment properties in the paradise islands of the Maldives. Discover exceptional opportunities with high returns in the world's most sought-after destination.</p>
+                </div>
+                <div>
+                    <h3 class="footer-heading">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="locations.html">Locations</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="news.html">News</a></li>
+                        <li><a href="sales.html">Sales</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="footer-heading">Contact</h3>
+                    <div class="footer-contact">
+                        <p>Email: info@atolluxe.com</p>
+                        <p>Phone: +960 123 4567</p>
+                        <p>Address: Male, Maldives</p>
+                        <div class="footer-social">
+                            <a href="#" class="social-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                            </a>
+                            <a href="#" class="social-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                            </a>
+                            <a href="#" class="social-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+                            </a>
+                            <a href="#" class="social-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Atolluxe. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Intersection Observer for animations
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('in-view');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Elements to observe
+        const elementsToAnimate = [
+            document.querySelector('.niche-content'),
+            document.querySelector('.niche-image'),
+            document.querySelector('.projects-heading'),
+            document.querySelector('.locations-heading')
+        ];
+
+        // Add project cards
+        document.querySelectorAll('.project-card').forEach(card => {
+            elementsToAnimate.push(card);
+        });
+
+        // Add location cards
+        document.querySelectorAll('.location-card').forEach(card => {
+            elementsToAnimate.push(card);
+        });
+
+        // Start observing
+        elementsToAnimate.forEach(element => {
+            if (element) observer.observe(element);
+        });
+
+        // Header scroll effect
+        const header = document.querySelector('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Page transition
+        const pageTransition = document.querySelector('.page-transition');
+        const links = document.querySelectorAll('a:not([target="_blank"])');
+
+        links.forEach(link => {
+            link.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                
+                // Skip transition for links on same page
+                if (href.charAt(0) === '#' || href === window.location.href) {
+                    return;
+                }
+                
+                e.preventDefault();
+                
+                // Start transition animation
+                pageTransition.classList.add('active');
+                
+                setTimeout(() => {
+                    window.location.href = href;
+                }, 700);
+            });
+        });
+
+        // Page load animation
+        window.addEventListener('load', () => {
+            pageTransition.classList.add('exit');
+            
+            setTimeout(() => {
+                pageTransition.classList.remove('active');
+                pageTransition.classList.remove('exit');
+            }, 700);
+        });
+    </script>
+</body>
+</html>
