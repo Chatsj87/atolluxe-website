@@ -1,0 +1,1268 @@
+.footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: var(--spacing-xs);
+        }
+        
+        .footer-links a {
+            color: var(--light-grey);
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--olive-pale);
+            padding-left: 5px;
+        }
+        
+        .footer-contact p {
+            margin-bottom: var(--spacing-xs);
+            font-size: 0.9rem;
+        }
+        
+        .footer-social {
+            display: flex;
+            gap: var(--spacing-sm);
+            margin-top: var(--spacing-sm);
+        }
+        
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            background-color: var(--olive-dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            transition: all 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            background-color: var(--olive-medium);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: var(--spacing-lg);
+            margin-top: var(--spacing-lg);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.8rem;
+            color: var(--medium-grey);
+        }
+        
+        /* Media Queries */
+        @media (max-width: 991px) {
+            h1 {
+                font-size: 3rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            .page-header h1 {
+                font-size: 3.5rem;
+            }
+            
+            .featured-content {
+                padding: var(--spacing-md);
+            }
+            
+            .featured-title {
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 767px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .page-header h1 {
+                font-size: 2.8rem;
+            }
+            
+            .page-header p {
+                font-size: 1rem;
+            }
+            
+            .header-container {
+                flex-direction: column;
+                padding: 1rem var(--spacing-md);
+            }
+            
+            .logo {
+                margin-bottom: var(--spacing-sm);
+            }
+            
+            nav {
+                width: 100%;
+            }
+            
+            nav ul {
+                justify-content: space-between;
+            }
+            
+            nav li {
+                margin-left: 0;
+            }
+            
+            .projects-grid {
+                grid-template-columns: minmax(0, 1fr);
+            }
+            
+            .project-card {
+                max-width: 400px;
+                margin: 0 auto;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .page-header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .page-header {
+                height: 40vh;
+            }
+            
+            .featured-features {
+                flex-direction: column;
+                gap: var(--spacing-xs);
+            }
+            
+            .featured-feature {
+                padding: var(--spacing-xs) 0;
+            }
+            
+            .project-features {
+                flex-direction: column;
+                gap: var(--spacing-xs);
+            }
+            
+            .project-feature {
+                padding: var(--spacing-xs) 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Page Transition -->
+    <div class="page-transition"></div>
+    
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="/api/placeholder/100/50" alt="Atolluxe Logo">
+                <span class="logo-text">ATOLLUXE</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="locations.html">Locations</a></li>
+                    <li><a href="projects.html" class="active">Projects</a></li>
+                    <li><a href="news.html">News</a></li>
+                    <li><a href="sales.html">Sales</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="page-header-bg"></div>
+        <div class="page-header-overlay"></div>
+        <div class="container">
+            <div class="page-header-content">
+                <h1>Name of Project with Quick information set</h1>
+                <p>Discover our exclusive collection of luxury properties across the Maldives islands, each offering exceptional investment potential and rental returns.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Featured Project -->
+    <section class="section">
+        <div class="container">
+            <div class="featured-project">
+                <div class="featured-image">
+                    <img src="/api/placeholder/800/600" alt="The Palms @ Thoddoo">
+                    <div class="featured-tag">Featured Project</div>
+                </div>
+                <div class="featured-content">
+                    <h2 class="featured-title">The Palms @ Thoddoo</h2>
+                    <div class="featured-location">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                        Alif Atoll, Maldives
+                    </div>
+                    <p class="featured-description">Luxury resort-style properties surrounded by lush tropical gardens and pristine white sand beaches, offering exceptional investment returns and an authentic Maldivian experience. Each villa features private pools, direct beach access, and elegant interiors inspired by local design traditions.</p>
+                    <div class="featured-features">
+                        <div class="featured-feature">
+                            <div class="featured-value">24</div>
+                            <div class="featured-label">Villas</div>
+                        </div>
+                        <div class="featured-feature">
+                            <div class="featured-value">110-220</div>
+                            <div class="featured-label">sqm</div>
+                        </div>
+                        <div class="featured-feature">
+                            <div class="featured-value">1-3</div>
+                            <div class="featured-label">Bedrooms</div>
+                        </div>
+                        <div class="featured-feature">
+                            <div class="featured-value">12%</div>
+                            <div class="featured-label">ROI</div>
+                        </div>
+                    </div>
+                    <div class="featured-price">From $395,000</div>
+                    <div class="featured-cta">
+                        <a href="project-detail.html" class="cta-btn">View Property</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Project Filter -->
+            <div class="project-filter">
+                <button class="filter-btn active" data-filter="all">All Properties</button>
+                <button class="filter-btn" data-filter="kaafu">Kaafu Atoll</button>
+                <button class="filter-btn" data-filter="alif">Alif Atoll</button>
+                <button class="filter-btn" data-filter="baa">Baa Atoll</button>
+                <button class="filter-btn" data-filter="villa">Villas</button>
+                <button class="filter-btn" data-filter="residence">Residences</button>
+            </div>
+            
+            <!-- Projects Grid -->
+            <div class="projects-grid">
+                <div class="project-card" data-category="kaafu villa" style="transition-delay: 0.1s;">
+                    <div class="project-image">
+                        <img src="/api/placeholder/400/300" alt="The S. Villa @ Dhiffushi">
+                        <div class="project-tag">Luxury</div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">The S. Villa</h3>
+                        <div class="project-location">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                            Kaafu Atoll, Dhiffushi
+                        </div>
+                        <p class="project-description">Exclusive beachfront villas with private pools and direct ocean access on the pristine island of Dhiffushi.</p>
+                        <div class="project-features">
+                            <div class="project-feature">
+                                <div class="feature-value">18</div>
+                                <div class="feature-label">Villas</div>
+                            </div>
+                            <div class="project-feature">
+                                <div class="feature-value">120-180</div>
+                                <div class="feature-label">sqm</div>
+                            </div>
+                            <div class="project-feature">
+                                <div class="feature-value">1-2</div>
+                                <div class="feature-label">Bedrooms</div>
+                            </div>
+                        </div>
+                        <div class="project-price">From $495,000</div>
+                        <div class="project-cta">
+                            <a href="project-detail.html" class="cta-btn">View Property</a>
+                            <div class="wishlist-btn">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card" data-category="alif villa" style="transition-delay: 0.3s;">
+                    <div class="project-image">
+                        <img src="/api/placeholder/400/300" alt="The Palms @ Thoddoo">
+                        <div class="project-tag">Featured</div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">The Palms</h3>
+                        <div class="project-location">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                            Alif Atoll, Thoddoo
+                        </div>
+                        <p class="project-description">Luxury resort-style properties surrounded by lush tropical gardens and white sand beaches on Thoddoo Island.</p>
+                        <div class="project-features">
+                            <div class="project-feature">
+                                <div class="feature-value">24</div>
+                                <div class="feature-label">Villas</div>
+                            </div>
+                            <div class="project-feature">
+                                <div class="feature-value">110-220</div>
+                                <div class="feature-label">sqm</div>
+                            </div>
+                            <div class="project-feature">
+                                <div class="feature-value">1-3</div>
+                                <div class="feature-label">Bedrooms</div>
+                            </div>
+                        </div>
+                        <div class="project-price">From $395,000</div>
+                        <div class="project-cta">
+                            <a href="project-detail.html" class="cta-btn">View Property</a>
+                            <div class="wishlist-btn">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card" data-category="baa residence" style="transition-delay: 0.5s;">
+                    <div class="project-image">
+                        <img src="/api/placeholder/400/300" alt="The Shores @ Hanimadhoo">
+                        <div class="project-tag">Premium</div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">The Shores</h3>
+                        <div class="project-location">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                            Baa Atoll, Hanimadhoo
+                        </div>
+                        <p class="project-description">Contemporary waterfront residences featuring panoramic ocean views and sustainable design on Hanimadhoo Island.</p>
+                        <div class="project-features">
+                            <div class="project-feature">
+                                <div class="feature-value">16</div>
+                                <div class="feature-label">Residences</div>
+                            </div>
+                            <div class="project-feature">
+                                <div class="feature-value">150-250</div>
+                                <div class="feature-label">sqm</div>
+                            </div>
+                            <div class="project-feature">
+                                <div class="feature-value">2-4</div>
+                                <div class="feature-label">Bedrooms</div>
+                            </div>
+                        </div>
+                        <div class="project-price">From $595,000</div>
+                        <div class="project-cta">
+                            <a href="project-detail.html" class="cta-btn">View Property</a>
+                            <div class="wishlist-btn">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Investment Guide -->
+            <div class="investment-guide">
+                <div class="guide-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 8v4"></path><path d="M12 16h.01"></path></svg>
+                </div>
+                <div class="guide-content">
+                    <h3>New to Maldives Property Investment?</h3>
+                    <p>Our comprehensive guide covers everything you need to know about investing in the Maldives luxury real estate market, from legal considerations to financing options and expected returns.</p>
+                    <a href="sales.html" class="cta-btn">Download Investment Guide</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div>
+                    <div class="footer-logo">
+                        <img src="/api/placeholder/100/50" alt="Atolluxe Logo">
+                        <span class="footer-logo-text">ATOLLUXE</span>
+                    </div>
+                    <p>Luxury investment properties in the paradise islands of the Maldives. Discover exceptional opportunities with high returns in the world's most sought-after destination.</p>
+                </div>
+                <div>
+                    <h3 class="footer-heading">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="locations.html">Locations</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="news.html">News</a></li>
+                        <li><a href="sales.html">Sales</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="footer-heading">Contact</h3>
+                    <div class="footer-contact">
+                        <p>Email: info@atolluxe.com</p>
+                        <p>Phone: +960 123 4567</p>
+                        <p>Address: Male, Maldives</p>
+                        <div class="footer-social">
+                            <a href="#" class="social-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                            </a>
+                            <a href="#" class="social-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                            </a>
+                            <a href="#" class="social-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+                            </a>
+                            <a href="#" class="social-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Atolluxe. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Intersection Observer for animations
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('in-view');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Elements to observe
+        const elementsToAnimate = [
+            document.querySelector('.featured-project'),
+            document.querySelector('.investment-guide')
+        ];
+
+        // Add project cards
+        document.querySelectorAll('.project-card').forEach(card => {
+            elementsToAnimate.push(card);
+        });
+
+        // Start observing
+        elementsToAnimate.forEach(element => {
+            if (element) observer.observe(element);
+        });
+
+        // Header scroll effect
+        const header = document.querySelector('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Project filtering
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Remove active class from all buttons
+                filterBtns.forEach(btn => btn.classList.remove('active'));
+                
+                // Add active class to clicked button
+                this.classList.add('active');
+                
+                const filter = this.getAttribute('data-filter');
+                
+                projectCards.forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-category').includes(filter)) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Wishlist functionality
+        const wishlistBtns = document.querySelectorAll('.wishlist-btn');
+
+        wishlistBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                this.classList.toggle('active');
+            });
+        });
+
+        // Page transition
+        const pageTransition = document.querySelector('.page-transition');
+        const links = document.querySelectorAll('a:not([target="_blank"]):not([href^="#"])');
+
+        links.forEach(link => {
+            link.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                
+                e.preventDefault();
+                
+                // Start transition animation
+                pageTransition.classList.add('active');
+                
+                setTimeout(() => {
+                    window.location.href = href;
+                }, 700);
+            });
+        });
+
+        // Page load animation
+        window.addEventListener('load', () => {
+            pageTransition.classList.add('exit');
+            
+            setTimeout(() => {
+                pageTransition.classList.remove('active');
+                pageTransition.classList.remove('exit');
+            }, 700);
+        });
+    </script>
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Atolluxe</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* Base Styles - Same as previous pages */
+        :root {
+            /* Color Palette */
+            --olive-dark: #556b2f;
+            --olive-medium: #708238;
+            --olive-light: #8a9a5b;
+            --olive-pale: #b9c49c;
+            --cream: #f5f5dc;
+            --light-grey: #e5e5e5;
+            --medium-grey: #a9a9a9;
+            --dark-grey: #333333;
+            --black: #121212;
+            --white: #ffffff;
+            
+            /* Typography */
+            --font-heading: 'Cormorant Garamond', serif;
+            --font-body: 'Montserrat', sans-serif;
+            
+            /* Spacing */
+            --spacing-xs: 0.5rem;
+            --spacing-sm: 1rem;
+            --spacing-md: 2rem;
+            --spacing-lg: 4rem;
+            --spacing-xl: 8rem;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: var(--font-body);
+            font-weight: 300;
+            color: var(--dark-grey);
+            background-color: var(--cream);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-heading);
+            font-weight: 400;
+            line-height: 1.2;
+            color: var(--olive-dark);
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: var(--spacing-md);
+            font-weight: 300;
+        }
+        
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: var(--spacing-sm);
+            position: relative;
+            display: inline-block;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background-color: var(--olive-medium);
+            transition: width 0.3s ease;
+        }
+        
+        h2:hover::after {
+            width: 100%;
+        }
+        
+        h3 {
+            font-size: 1.8rem;
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        p {
+            margin-bottom: var(--spacing-md);
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+        
+        a {
+            color: var(--olive-dark);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        a:hover {
+            color: var(--olive-medium);
+        }
+        
+        /* Layout & Header - Same as previous pages */
+        .container {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+        }
+        
+        .section {
+            padding: var(--spacing-xl) 0;
+            position: relative;
+        }
+        
+        .section:nth-child(even) {
+            background-color: var(--white);
+        }
+        
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: rgba(245, 245, 220, 0.95);
+            backdrop-filter: blur(5px);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.5s ease;
+        }
+        
+        header.scrolled {
+            padding: 0.5rem 0;
+            background-color: rgba(245, 245, 220, 0.98);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem var(--spacing-md);
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 50px;
+            transition: all 0.3s ease;
+        }
+        
+        header.scrolled .logo img {
+            height: 40px;
+        }
+        
+        .logo-text {
+            margin-left: var(--spacing-xs);
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            font-weight: 400;
+            color: var(--olive-dark);
+            letter-spacing: 2px;
+        }
+        
+        /* Navigation - Same as previous pages */
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav li {
+            margin-left: var(--spacing-md);
+        }
+        
+        nav a {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 400;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+        
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background-color: var(--olive-medium);
+            transition: width 0.3s ease;
+        }
+        
+        nav a:hover::after {
+            width: 100%;
+        }
+        
+        nav a.active::after {
+            width: 100%;
+        }
+        
+        /* Page Header */
+        .page-header {
+            height: 50vh;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding-top: 100px;
+            background-color: var(--light-grey);
+            overflow: hidden;
+        }
+        
+        .page-header-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('/api/placeholder/1400/800');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.8;
+        }
+        
+        .page-header-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(18, 18, 18, 0.4), rgba(85, 107, 47, 0.7));
+        }
+        
+        .page-header-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            color: var(--white);
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s ease forwards 0.5s;
+        }
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .page-header h1 {
+            color: var(--white);
+            font-size: 4rem;
+            margin-bottom: var(--spacing-sm);
+            line-height: 1.2;
+        }
+        
+        .page-header p {
+            font-size: 1.2rem;
+            margin-bottom: 0;
+            max-width: 600px;
+        }
+        
+        /* Project Filter */
+        .project-filter {
+            display: flex;
+            justify-content: center;
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-lg);
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            padding: 10px 20px;
+            background-color: var(--light-grey);
+            border: none;
+            border-radius: 5px;
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .filter-btn.active {
+            background-color: var(--olive-dark);
+            color: var(--white);
+        }
+        
+        .filter-btn:hover {
+            background-color: var(--olive-light);
+            color: var(--white);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Projects Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: var(--spacing-lg);
+        }
+        
+        .project-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.5s ease;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        
+        .project-card.in-view {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .project-image {
+            height: 250px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .project-card:hover .project-image img {
+            transform: scale(1.1);
+        }
+        
+        .project-tag {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 5px 15px;
+            background-color: var(--olive-dark);
+            color: var(--white);
+            font-size: 0.8rem;
+            font-weight: 500;
+            border-radius: 3px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .project-content {
+            padding: var(--spacing-md);
+        }
+        
+        .project-title {
+            font-size: 1.8rem;
+            margin-bottom: var(--spacing-xs);
+            font-weight: 400;
+        }
+        
+        .project-location {
+            color: var(--medium-grey);
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .project-location svg {
+            margin-right: 5px;
+        }
+        
+        .project-description {
+            margin-bottom: var(--spacing-md);
+            color: var(--dark-grey);
+        }
+        
+        .project-features {
+            display: flex;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-md);
+            border-top: 1px solid var(--light-grey);
+            border-bottom: 1px solid var(--light-grey);
+            padding: var(--spacing-sm) 0;
+        }
+        
+        .project-feature {
+            text-align: center;
+            flex: 1;
+        }
+        
+        .feature-value {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: var(--olive-dark);
+            margin-bottom: 5px;
+        }
+        
+        .feature-label {
+            font-size: 0.8rem;
+            color: var(--medium-grey);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .project-price {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            color: var(--olive-dark);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .project-cta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .cta-btn {
+            display: inline-block;
+            background-color: var(--olive-dark);
+            color: var(--white);
+            padding: 12px 25px;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+        
+        .cta-btn:hover {
+            background-color: var(--olive-medium);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .wishlist-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--light-grey);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .wishlist-btn svg {
+            color: var(--medium-grey);
+            transition: all 0.3s ease;
+        }
+        
+        .wishlist-btn:hover {
+            background-color: var(--olive-pale);
+        }
+        
+        .wishlist-btn:hover svg {
+            color: var(--olive-dark);
+        }
+        
+        .wishlist-btn.active {
+            background-color: var(--olive-pale);
+        }
+        
+        .wishlist-btn.active svg {
+            color: var(--olive-dark);
+            fill: var(--olive-dark);
+        }
+        
+        /* Featured Project */
+        .featured-project {
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-bottom: var(--spacing-xl);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s ease;
+        }
+        
+        .featured-project.in-view {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        @media (max-width: 991px) {
+            .featured-project {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .featured-image {
+            height: 100%;
+            min-height: 400px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .featured-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .featured-project:hover .featured-image img {
+            transform: scale(1.05);
+        }
+        
+        .featured-tag {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            padding: 8px 20px;
+            background-color: var(--olive-dark);
+            color: var(--white);
+            font-size: 0.9rem;
+            font-weight: 500;
+            border-radius: 3px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .featured-content {
+            padding: var(--spacing-lg);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .featured-title {
+            font-size: 2.5rem;
+            margin-bottom: var(--spacing-xs);
+            font-weight: 400;
+        }
+        
+        .featured-location {
+            color: var(--medium-grey);
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .featured-location svg {
+            margin-right: 5px;
+        }
+        
+        .featured-description {
+            margin-bottom: var(--spacing-md);
+            color: var(--dark-grey);
+        }
+        
+        .featured-features {
+            display: flex;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-md);
+            border-top: 1px solid var(--light-grey);
+            border-bottom: 1px solid var(--light-grey);
+            padding: var(--spacing-sm) 0;
+        }
+        
+        .featured-feature {
+            text-align: center;
+            flex: 1;
+        }
+        
+        .featured-value {
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: var(--olive-dark);
+            margin-bottom: 5px;
+        }
+        
+        .featured-label {
+            font-size: 0.8rem;
+            color: var(--medium-grey);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .featured-price {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            color: var(--olive-dark);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .featured-cta .cta-btn {
+            padding: 15px 30px;
+            font-size: 1rem;
+        }
+        
+        /* Investment Guide */
+        .investment-guide {
+            background-color: var(--cream);
+            border-radius: 10px;
+            padding: var(--spacing-lg);
+            margin-top: var(--spacing-xl);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-lg);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s ease;
+        }
+        
+        .investment-guide.in-view {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        @media (max-width: 767px) {
+            .investment-guide {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+        
+        .guide-icon {
+            width: 100px;
+            height: 100px;
+            background-color: var(--olive-pale);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        
+        .guide-icon svg {
+            width: 50px;
+            height: 50px;
+            color: var(--olive-dark);
+        }
+        
+        .guide-content h3 {
+            margin-bottom: var(--spacing-xs);
+        }
+        
+        .guide-content p {
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        /* Page Transition - Same as previous pages */
+        .page-transition {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--olive-dark);
+            z-index: 9999;
+            transform: translateY(100%);
+            transition: transform 0.7s cubic-bezier(0.7, 0, 0.3, 1);
+        }
+        
+        .page-transition.active {
+            transform: translateY(0);
+        }
+        
+        .page-transition.exit {
+            transform: translateY(-100%);
+        }
+        
+        /* Footer - Same as previous pages */
+        footer {
+            background-color: var(--dark-grey);
+            color: var(--light-grey);
+            padding: var(--spacing-lg) 0;
+            margin-top: var(--spacing-xl);
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-md);
+        }
+        
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .footer-logo img {
+            height: 40px;
+        }
+        
+        .footer-logo-text {
+            margin-left: var(--spacing-xs);
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            color: var(--white);
+            letter-spacing: 2px;
+        }
+        
+        .footer-heading {
+            font-size: 1.2rem;
+            margin-bottom: var(--spacing-sm);
+            color: var(--white);
+            position: relative;
+        }
+        
+        .footer-heading::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--olive-light);
+        }
+        
+        .footer-links {
+            list-style
