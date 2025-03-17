@@ -1,0 +1,1306 @@
+.news-image {
+            height: 200px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .news-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .news-card:hover .news-image img {
+            transform: scale(1.1);
+        }
+        
+        .news-source {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: var(--olive-dark);
+            color: var(--white);
+            padding: 5px 10px;
+            border-radius: 3px;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+        
+        .news-content {
+            padding: var(--spacing-md);
+        }
+        
+        .news-content h3 {
+            margin-bottom: var(--spacing-xs);
+            font-size: 1.5rem;
+        }
+        
+        .news-meta {
+            display: block;
+            font-size: 0.9rem;
+            color: var(--medium-grey);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .news-excerpt {
+            margin-bottom: var(--spacing-sm);
+            color: var(--dark-grey);
+            font-size: 0.95rem;
+        }
+        
+        .read-more {
+            display: inline-flex;
+            align-items: center;
+            color: var(--olive-dark);
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .read-more svg {
+            margin-left: 0.5rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .read-more:hover {
+            color: var(--olive-medium);
+        }
+        
+        .read-more:hover svg {
+            transform: translateX(5px);
+        }
+        
+        /* Blog Posts Section */
+        .blog-section {
+            background-color: var(--white);
+        }
+        
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-md);
+        }
+        
+        .blog-card {
+            background-color: var(--cream);
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(30px);
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .blog-card.in-view {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .blog-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .blog-image {
+            height: 200px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .blog-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .blog-card:hover .blog-image img {
+            transform: scale(1.1);
+        }
+        
+        .blog-content {
+            padding: var(--spacing-md);
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .blog-content h3 {
+            margin-bottom: var(--spacing-xs);
+            font-size: 1.5rem;
+        }
+        
+        .blog-meta {
+            display: block;
+            font-size: 0.9rem;
+            color: var(--medium-grey);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .blog-excerpt {
+            margin-bottom: var(--spacing-sm);
+            color: var(--dark-grey);
+            font-size: 0.95rem;
+            flex: 1;
+        }
+        
+        .blog-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid var(--light-grey);
+            padding-top: var(--spacing-sm);
+            margin-top: auto;
+        }
+        
+        .blog-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-avatar {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 10px;
+        }
+        
+        .author-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .author-name {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--dark-grey);
+        }
+        
+        .blog-categories {
+            display: flex;
+            gap: 5px;
+        }
+        
+        .blog-category {
+            background-color: var(--olive-pale);
+            color: var(--olive-dark);
+            padding: 3px 8px;
+            border-radius: 3px;
+            font-size: 0.8rem;
+        }
+        
+        .view-all {
+            display: block;
+            text-align: center;
+            margin-top: var(--spacing-lg);
+            padding: 1rem 2rem;
+            background-color: transparent;
+            border: 1px solid var(--olive-dark);
+            color: var(--olive-dark);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease 0.5s;
+        }
+        
+        .view-all.in-view {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .view-all:hover {
+            background-color: var(--olive-dark);
+            color: var(--white);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Newsletter Section */
+        .newsletter-section {
+            position: relative;
+            padding: var(--spacing-xl) 0;
+            overflow: hidden;
+        }
+        
+        .newsletter-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('/api/placeholder/1400/800');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            opacity: 0.1;
+            z-index: -1;
+        }
+        
+        .newsletter-content {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s ease;
+        }
+        
+        .newsletter-content.in-view {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .newsletter-form {
+            display: flex;
+            margin-top: var(--spacing-md);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        .newsletter-input {
+            flex: 1;
+            padding: 1rem 1.5rem;
+            border: none;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            outline: none;
+        }
+        
+        .newsletter-btn {
+            padding: 1rem 2rem;
+            background-color: var(--olive-dark);
+            color: var(--white);
+            border: none;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .newsletter-btn:hover {
+            background-color: var(--olive-medium);
+        }
+        
+        /* Page Transition - Same as previous pages */
+        .page-transition {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--olive-dark);
+            z-index: 9999;
+            transform: translateY(100%);
+            transition: transform 0.7s cubic-bezier(0.7, 0, 0.3, 1);
+        }
+        
+        .page-transition.active {
+            transform: translateY(0);
+        }
+        
+        .page-transition.exit {
+            transform: translateY(-100%);
+        }
+        
+        /* Footer - Same as previous pages */
+        footer {
+            background-color: var(--dark-grey);
+            color: var(--light-grey);
+            padding: var(--spacing-lg) 0;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-md);
+        }
+        
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .footer-logo img {
+            height: 40px;
+        }
+        
+        .footer-logo-text {
+            margin-left: var(--spacing-xs);
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            color: var(--white);
+            letter-spacing: 2px;
+        }
+        
+        .footer-heading {
+            font-size: 1.2rem;
+            margin-bottom: var(--spacing-sm);
+            color: var(--white);
+            position: relative;
+        }
+        
+        .footer-heading::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--olive-light);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: var(--spacing-xs);
+        }
+        
+        .footer-links a {
+            color: var(--light-grey);
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--olive-pale);
+            padding-left: 5px;
+        }
+        
+        .footer-contact p {
+            margin-bottom: var(--spacing-xs);
+            font-size: 0.9rem;
+        }
+        
+        .footer-social {
+            display: flex;
+            gap: var(--spacing-sm);
+            margin-top: var(--spacing-sm);
+        }
+        
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            background-color: var(--olive-dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            transition: all 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            background-color: var(--olive-medium);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: var(--spacing-lg);
+            margin-top: var(--spacing-lg);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.8rem;
+            color: var(--medium-grey);
+        }
+        
+        /* Media Queries */
+        @media (max-width: 991px) {
+            h1 {
+                font-size: 3rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            .page-header h1 {
+                font-size: 3.5rem;
+            }
+        }
+        
+        @media (max-width: 767px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .page-header h1 {
+                font-size: 2.8rem;
+            }
+            
+            .page-header p {
+                font-size: 1rem;
+            }
+            
+            .header-container {
+                flex-direction: column;
+                padding: 1rem var(--spacing-md);
+            }
+            
+            .logo {
+                margin-bottom: var(--spacing-sm);
+            }
+            
+            nav {
+                width: 100%;
+            }
+            
+            nav ul {
+                justify-content: space-between;
+            }
+            
+            nav li {
+                margin-left: 0;
+            }
+            
+            .podcast-card,
+            .news-card,
+            .blog-card {
+                max-width: 350px;
+                margin: 0 auto;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+            }
+            
+            .newsletter-input {
+                width: 100%;
+                border-bottom: 1px solid var(--light-grey);
+            }
+            
+            .newsletter-btn {
+                width: 100%;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .page-header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .page-header {
+                height: 40vh;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Page Transition -->
+    <div class="page-transition"></div>
+    
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="/api/placeholder/100/50" alt="Atolluxe Logo">
+                <span class="logo-text">ATOLLUXE</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="locations.html">Locations</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="news.html" class="active">News</a></li>
+                    <li><a href="sales.html">Sales</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="page-header-bg"></div>
+        <div class="page-header-overlay"></div>
+        <div class="container">
+            <div class="page-header-content">
+                <h1>The Main Heading for the Section</h1>
+                <p>Stay updated with the latest news, insights, and developments in luxury Maldives property investment</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Podcasts Section -->
+    <section class="section podcasts-section">
+        <div class="container">
+            <div class="section-heading">
+                <h2>Links to YouTube & Podcasts</h2>
+                <p>Listen to our experts discuss the Maldives real estate market, investment strategies, and property development</p>
+            </div>
+            <div class="podcasts-grid">
+                <div class="podcast-card" style="transition-delay: 0.1s;">
+                    <div class="podcast-image">
+                        <img src="/api/placeholder/400/300" alt="Podcast 1">
+                    </div>
+                    <div class="podcast-content">
+                        <h3>Investment Opportunities in Luxury Island Properties</h3>
+                        <span class="podcast-meta">Episode 12 • 45 min • March 10, 2025</span>
+                        <p>Our CEO Ahmed Rasheed discusses the emerging luxury real estate market in the Maldives and why now is the perfect time to invest.</p>
+                        <a href="#" class="podcast-play">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+                            Listen Now
+                        </a>
+                    </div>
+                </div>
+                <div class="podcast-card" style="transition-delay: 0.3s;">
+                    <div class="podcast-image">
+                        <img src="/api/placeholder/400/300" alt="Podcast 2">
+                    </div>
+                    <div class="podcast-content">
+                        <h3>Sustainable Luxury: Building for the Future</h3>
+                        <span class="podcast-meta">Episode 8 • 52 min • February 15, 2025</span>
+                        <p>Fatima Al-Sayed explores how Atolluxe integrates sustainable practices into luxury development without compromising on quality or experience.</p>
+                        <a href="#" class="podcast-play">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+                            Listen Now
+                        </a>
+                    </div>
+                </div>
+                <div class="podcast-card" style="transition-delay: 0.5s;">
+                    <div class="podcast-image">
+                        <img src="/api/placeholder/400/300" alt="Podcast 3">
+                    </div>
+                    <div class="podcast-content">
+                        <h3>The Maldives Tourism Boom: Data & Trends</h3>
+                        <span class="podcast-meta">Episode 15 • 38 min • March 25, 2025</span>
+                        <p>Our investment team analyzes the latest tourism data, growth projections, and what it means for property investors in the Maldives.</p>
+                        <a href="#" class="podcast-play">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+                            Listen Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- News Articles Section -->
+    <section class="section news-section">
+        <div class="container">
+            <div class="section-heading">
+                <h2>In The News</h2>
+                <p>Atolluxe's latest mentions and features in major media outlets</p>
+            </div>
+            <div class="news-grid">
+                <div class="news-card" style="transition-delay: 0.1s;">
+                    <div class="news-image">
+                        <img src="/api/placeholder/400/300" alt="Gulf News Article">
+                        <div class="news-source">Gulf News</div>
+                    </div>
+                    <div class="news-content">
+                        <h3>Maldives Emerges as Luxury Investment Hotspot</h3>
+                        <span class="news-meta">March 15, 2025</span>
+                        <p class="news-excerpt">Gulf News explores how the Maldives is becoming a prime destination for luxury property investment, with Atolluxe leading the way in sustainable development.</p>
+                        <a href="#" class="read-more">
+                            Read Article
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="news-card" style="transition-delay: 0.3s;">
+                    <div class="news-image">
+                        <img src="/api/placeholder/400/300" alt="Corporate Maldives Article">
+                        <div class="news-source">Corporate Maldives</div>
+                    </div>
+                    <div class="news-content">
+                        <h3>Atolluxe Announces $50M Investment in Alif Atoll</h3>
+                        <span class="news-meta">February 28, 2025</span>
+                        <p class="news-excerpt">Corporate Maldives reports on Atolluxe's latest development project and its impact on the local economy and tourism sector.</p>
+                        <a href="#" class="read-more">
+                            Read Article
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="news-card" style="transition-delay: 0.5s;">
+                    <div class="news-image">
+                        <img src="/api/placeholder/400/300" alt="The National Article">
+                        <div class="news-source">The National</div>
+                    </div>
+                    <div class="news-content">
+                        <h3>Sustainable Luxury: The Future of Island Development</h3>
+                        <span class="news-meta">March 5, 2025</span>
+                        <p class="news-excerpt">The National features Atolluxe's innovative approach to sustainable luxury development and how it's setting new standards in the industry.</p>
+                        <a href="#" class="read-more">
+                            Read Article
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Blog Posts Section -->
+    <section class="section blog-section">
+        <div class="container">
+            <div class="section-heading">
+                <h2>Blog Posts</h2>
+                <p>Insights, guides, and stories from our team of experts</p>
+            </div>
+            <div class="blog-grid">
+                <div class="blog-card" style="transition-delay: 0.1s;">
+                    <div class="blog-image">
+                        <img src="/api/placeholder/400/300" alt="Blog Post 1">
+                    </div>
+                    <div class="blog-content">
+                        <h3>5 Reasons Why the Maldives is a Smart Investment</h3>
+                        <span class="blog-meta">March 20, 2025</span>
+                        <p class="blog-excerpt">Discover why the Maldives offers not only stunning natural beauty but also exceptional investment potential for property buyers seeking strong returns.</p>
+                        <div class="blog-footer">
+                            <div class="blog-author">
+                                <div class="author-avatar">
+                                    <img src="/api/placeholder/50/50" alt="Michael Chen">
+                                </div>
+                                <span class="author-name">Michael Chen</span>
+                            </div>
+                            <div class="blog-categories">
+                                <span class="blog-category">Investment</span>
+                                <span class="blog-category">Market</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="blog-card" style="transition-delay: 0.3s;">
+                    <div class="blog-image">
+                        <img src="/api/placeholder/400/300" alt="Blog Post 2">
+                    </div>
+                    <div class="blog-content">
+                        <h3>The Architectural Vision Behind The Palms @ Thoddoo</h3>
+                        <span class="blog-meta">March 12, 2025</span>
+                        <p class="blog-excerpt">Our Chief Design Officer shares the inspiration, challenges, and innovative solutions behind our flagship property development on Thoddoo Island.</p>
+                        <div class="blog-footer">
+                            <div class="blog-author">
+                                <div class="author-avatar">
+                                    <img src="/api/placeholder/50/50" alt="Sarah Thompson">
+                                </div>
+                                <span class="author-name">Sarah Thompson</span>
+                            </div>
+                            <div class="blog-categories">
+                                <span class="blog-category">Design</span>
+                                <span class="blog-category">Architecture</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="blog-card" style="transition-delay: 0.5s;">
+                    <div class="blog-image">
+                        <img src="/api/placeholder/400/300" alt="Blog Post 3">
+                    </div>
+                    <div class="blog-content">
+                        <h3>Living in Paradise: A Day in the Life at The Shores</h3>
+                        <span class="blog-meta">March 5, 2025</span>
+                        <p class="blog-excerpt">Experience the daily rhythm, authentic local culture, and luxury amenities that make The Shores @ Hanimadhoo a truly exceptional place to live or vacation.</p>
+                        <div class="blog-footer">
+                            <div class="blog-author">
+                                <div class="author-avatar">
+                                    <img src="/api/placeholder/50/50" alt="Aisha Latheef">
+                                </div>
+                                <span class="author-name">Aisha Latheef</span>
+                            </div>
+                            <div class="blog-categories">
+                                <span class="blog-category">Lifestyle</span>
+                                <span class="blog-category">Experience</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="view-all">View All Blog Posts</a>
+        </div>
+    </section>
+    
+    <!-- Newsletter Section -->
+    <section class="section newsletter-section">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Subscribe to Our Newsletter</h2>
+                <p>Stay updated with the latest news, investment opportunities, and insights from Atolluxe. Join our community of investors and luxury lifestyle enthusiasts.</p>
+                <form class="newsletter-form">
+                    <input type="email" class="newsletter-input" placeholder="Your email address">
+                    <button type="submit" class="newsletter-btn">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div>
+                    <div class="footer-logo">
+                        <img src="/api/placeholder/100/50" alt="Atolluxe Logo">
+                        <span class="footer-logo-text">ATOLLUXE</span>
+                    </div>
+                    <p>Luxury investment properties in the paradise islands of the Maldives. Discover exceptional opportunities with high returns in the world's most sought-after destination.</p>
+                </div>
+                <div>
+                    <h3 class="footer-heading">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="locations.html">Locations</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="news.html">News</a></li>
+                        <li><a href="sales.html">Sales</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="footer-heading">Contact</h3>
+                    <div class="footer-contact">
+                        <p>Email: info@atolluxe.com</p>
+                        <p>Phone: +960 123 4567</p>
+                        <p>Address: Male, Maldives</p>
+                        <div class="footer-social">
+                            <a href="#" class="social-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                            </a>
+                            <a href="#" class="social-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+                            </a>
+                            <a href="#" class="social-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Atolluxe. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Intersection Observer for animations
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('in-view');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Elements to observe
+        const elementsToAnimate = [
+            document.querySelector('.section-heading'),
+            document.querySelector('.newsletter-content'),
+            document.querySelector('.view-all')
+        ];
+
+        // Add podcast cards
+        document.querySelectorAll('.podcast-card').forEach(card => {
+            elementsToAnimate.push(card);
+        });
+
+        // Add news cards
+        document.querySelectorAll('.news-card').forEach(card => {
+            elementsToAnimate.push(card);
+        });
+
+        // Add blog cards
+        document.querySelectorAll('.blog-card').forEach(card => {
+            elementsToAnimate.push(card);
+        });
+
+        // Start observing
+        elementsToAnimate.forEach(element => {
+            if (element) observer.observe(element);
+        });
+
+        // Header scroll effect
+        const header = document.querySelector('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Page transition
+        const pageTransition = document.querySelector('.page-transition');
+        const links = document.querySelectorAll('a:not([target="_blank"]):not([href^="#"])');
+
+        links.forEach(link => {
+            link.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                
+                e.preventDefault();
+                
+                // Start transition animation
+                pageTransition.classList.add('active');
+                
+                setTimeout(() => {
+                    window.location.href = href;
+                }, 700);
+            });
+        });
+
+        // Page load animation
+        window.addEventListener('load', () => {
+            pageTransition.classList.add('exit');
+            
+            setTimeout(() => {
+                pageTransition.classList.remove('active');
+                pageTransition.classList.remove('exit');
+            }, 700);
+        });
+    </script>
+</body>
+</html>-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                            </a>
+                            <a href="#" class="social-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News | Atolluxe</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* Base Styles - Same as previous pages */
+        :root {
+            /* Color Palette */
+            --olive-dark: #556b2f;
+            --olive-medium: #708238;
+            --olive-light: #8a9a5b;
+            --olive-pale: #b9c49c;
+            --cream: #f5f5dc;
+            --light-grey: #e5e5e5;
+            --medium-grey: #a9a9a9;
+            --dark-grey: #333333;
+            --black: #121212;
+            --white: #ffffff;
+            
+            /* Typography */
+            --font-heading: 'Cormorant Garamond', serif;
+            --font-body: 'Montserrat', sans-serif;
+            
+            /* Spacing */
+            --spacing-xs: 0.5rem;
+            --spacing-sm: 1rem;
+            --spacing-md: 2rem;
+            --spacing-lg: 4rem;
+            --spacing-xl: 8rem;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: var(--font-body);
+            font-weight: 300;
+            color: var(--dark-grey);
+            background-color: var(--cream);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-heading);
+            font-weight: 400;
+            line-height: 1.2;
+            color: var(--olive-dark);
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: var(--spacing-md);
+            font-weight: 300;
+        }
+        
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: var(--spacing-sm);
+            position: relative;
+            display: inline-block;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background-color: var(--olive-medium);
+            transition: width 0.3s ease;
+        }
+        
+        h2:hover::after {
+            width: 100%;
+        }
+        
+        h3 {
+            font-size: 1.8rem;
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        p {
+            margin-bottom: var(--spacing-md);
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+        
+        a {
+            color: var(--olive-dark);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        a:hover {
+            color: var(--olive-medium);
+        }
+        
+        /* Layout & Header - Same as previous pages */
+        .container {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+        }
+        
+        .section {
+            padding: var(--spacing-xl) 0;
+            position: relative;
+        }
+        
+        .section:nth-child(even) {
+            background-color: var(--white);
+        }
+        
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: rgba(245, 245, 220, 0.95);
+            backdrop-filter: blur(5px);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.5s ease;
+        }
+        
+        header.scrolled {
+            padding: 0.5rem 0;
+            background-color: rgba(245, 245, 220, 0.98);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem var(--spacing-md);
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 50px;
+            transition: all 0.3s ease;
+        }
+        
+        header.scrolled .logo img {
+            height: 40px;
+        }
+        
+        .logo-text {
+            margin-left: var(--spacing-xs);
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            font-weight: 400;
+            color: var(--olive-dark);
+            letter-spacing: 2px;
+        }
+        
+        /* Navigation - Same as previous pages */
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav li {
+            margin-left: var(--spacing-md);
+        }
+        
+        nav a {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 400;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+        
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background-color: var(--olive-medium);
+            transition: width 0.3s ease;
+        }
+        
+        nav a:hover::after {
+            width: 100%;
+        }
+        
+        nav a.active::after {
+            width: 100%;
+        }
+        
+        /* Page Header */
+        .page-header {
+            height: 50vh;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding-top: 100px;
+            background-color: var(--light-grey);
+            overflow: hidden;
+        }
+        
+        .page-header-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('/api/placeholder/1400/800');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.8;
+        }
+        
+        .page-header-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(18, 18, 18, 0.4), rgba(85, 107, 47, 0.7));
+        }
+        
+        .page-header-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            color: var(--white);
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s ease forwards 0.5s;
+        }
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .page-header h1 {
+            color: var(--white);
+            font-size: 4rem;
+            margin-bottom: var(--spacing-sm);
+            line-height: 1.2;
+        }
+        
+        .page-header p {
+            font-size: 1.2rem;
+            margin-bottom: 0;
+            max-width: 600px;
+        }
+        
+        /* Podcast Section */
+        .podcasts-section {
+            background-color: var(--white);
+        }
+        
+        .section-heading {
+            margin-bottom: var(--spacing-lg);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s ease;
+        }
+        
+        .section-heading.in-view {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .podcasts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-md);
+        }
+        
+        .podcast-card {
+            background-color: var(--cream);
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        
+        .podcast-card.in-view {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .podcast-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .podcast-image {
+            height: 200px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .podcast-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .podcast-card:hover .podcast-image img {
+            transform: scale(1.1);
+        }
+        
+        .podcast-content {
+            padding: var(--spacing-md);
+        }
+        
+        .podcast-content h3 {
+            margin-bottom: var(--spacing-xs);
+            font-size: 1.5rem;
+        }
+        
+        .podcast-meta {
+            display: block;
+            font-size: 0.9rem;
+            color: var(--medium-grey);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .podcast-play {
+            display: inline-flex;
+            align-items: center;
+            color: var(--olive-dark);
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .podcast-play svg {
+            margin-right: 0.5rem;
+        }
+        
+        .podcast-play:hover {
+            color: var(--olive-medium);
+            transform: translateX(5px);
+        }
+        
+        /* News Articles Section */
+        .news-section {
+            position: relative;
+        }
+        
+        .news-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('/api/placeholder/1400/800');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            opacity: 0.05;
+            z-index: -1;
+        }
+        
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-md);
+        }
+        
+        .news-card {
+            background-color: var(--white);
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        
+        .news-card.in-view {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .news-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .news-image {
+            height: 200px;
+            position: relative
