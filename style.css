@@ -121,3 +121,85 @@ footer {
 .social-icon:hover {
   background-color: var(--coral-light);
 }
+
+/* Enhanced hover effects for cards */
+.project-card:hover, .location-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(26, 58, 95, 0.15);
+}
+
+.project-card:hover .project-image img, 
+.location-card:hover .location-image img {
+  transform: scale(1.12);
+}
+
+/* Add a subtle overlay on hover */
+.location-overlay, .project-image::before {
+  transition: background-color 0.5s ease;
+}
+
+.location-card:hover .location-overlay {
+  background: linear-gradient(to bottom, rgba(26, 58, 95, 0.3), rgba(231, 111, 81, 0.7));
+}
+
+/* More generous whitespace */
+.section {
+  padding: var(--spacing-xl) 0;
+}
+
+/* Clean minimalist cards */
+.project-card, .location-card, .team-member {
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: var(--soft-white);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.07);
+}
+
+/* Refined typography */
+h1 {
+  font-size: 4rem;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+}
+
+.hero h1 {
+  font-size: 4.5rem;
+  margin-bottom: var(--spacing-md);
+}
+
+p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--medium-grey);
+}
+
+.hero p {
+  font-size: 1.25rem;
+  color: var(--soft-white);
+  max-width: 600px;
+}
+
+/* Parallax scrolling for page headers */
+.page-header-bg {
+  background-attachment: fixed;
+  transform: translateZ(0);
+}
+
+/* Section dividers with parallax */
+.section-divider {
+  height: 300px;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.section-divider::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(26, 58, 95, 0.8), rgba(231, 111, 81, 0.4));
+}
