@@ -1,18 +1,516 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>News | Atolluxe</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+.news-image {
+            height: 200px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .news-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .news-card:hover .news-image img {
+            transform: scale(1.1);
+        }
+        
+        .news-source {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: var(--olive-dark);
+            color: var(--white);
+            padding: 5px 10px;
+            border-radius: 3px;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+        
+        .news-content {
+            padding: var(--spacing-md);
+        }
+        
+        .news-content h3 {
+            margin-bottom: var(--spacing-xs);
+            font-size: 1.5rem;
+        }
+        
+        .news-meta {
+            display: block;
+            font-size: 0.9rem;
+            color: var(--medium-grey);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .news-excerpt {
+            margin-bottom: var(--spacing-sm);
+            color: var(--dark-grey);
+            font-size: 0.95rem;
+        }
+        
+        .read-more {
+            display: inline-flex;
+            align-items: center;
+            color: var(--olive-dark);
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .read-more svg {
+            margin-left: 0.5rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .read-more:hover {
+            color: var(--olive-medium);
+        }
+        
+        .read-more:hover svg {
+            transform: translateX(5px);
+        }
+        
+        /* Blog Posts Section */
+        .blog-section {
+            background-color: var(--white);
+        }
+        
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-md);
+        }
+        
+        .blog-card {
+            background-color: var(--cream);
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(30px);
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .blog-card.in-view {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .blog-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .blog-image {
+            height: 200px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .blog-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .blog-card:hover .blog-image img {
+            transform: scale(1.1);
+        }
+        
+        .blog-content {
+            padding: var(--spacing-md);
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .blog-content h3 {
+            margin-bottom: var(--spacing-xs);
+            font-size: 1.5rem;
+        }
+        
+        .blog-meta {
+            display: block;
+            font-size: 0.9rem;
+            color: var(--medium-grey);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .blog-excerpt {
+            margin-bottom: var(--spacing-sm);
+            color: var(--dark-grey);
+            font-size: 0.95rem;
+            flex: 1;
+        }
+        
+        .blog-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid var(--light-grey);
+            padding-top: var(--spacing-sm);
+            margin-top: auto;
+        }
+        
+        .blog-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-avatar {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 10px;
+        }
+        
+        .author-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .author-name {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--dark-grey);
+        }
+        
+        .blog-categories {
+            display: flex;
+            gap: 5px;
+        }
+        
+        .blog-category {
+            background-color: var(--olive-pale);
+            color: var(--olive-dark);
+            padding: 3px 8px;
+            border-radius: 3px;
+            font-size: 0.8rem;
+        }
+        
+        .view-all {
+            display: block;
+            text-align: center;
+            margin-top: var(--spacing-lg);
+            padding: 1rem 2rem;
+            background-color: transparent;
+            border: 1px solid var(--olive-dark);
+            color: var(--olive-dark);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease 0.5s;
+        }
+        
+        .view-all.in-view {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .view-all:hover {
+            background-color: var(--olive-dark);
+            color: var(--white);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Newsletter Section */
+        .newsletter-section {
+            position: relative;
+            padding: var(--spacing-xl) 0;
+            overflow: hidden;
+        }
+        
+        .newsletter-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('/api/placeholder/1400/800');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            opacity: 0.1;
+            z-index: -1;
+        }
+        
+        .newsletter-content {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s ease;
+        }
+        
+        .newsletter-content.in-view {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .newsletter-form {
+            display: flex;
+            margin-top: var(--spacing-md);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        .newsletter-input {
+            flex: 1;
+            padding: 1rem 1.5rem;
+            border: none;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            outline: none;
+        }
+        
+        .newsletter-btn {
+            padding: 1rem 2rem;
+            background-color: var(--olive-dark);
+            color: var(--white);
+            border: none;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .newsletter-btn:hover {
+            background-color: var(--olive-medium);
+        }
+        
+        /* Page Transition - Same as previous pages */
+        .page-transition {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--olive-dark);
+            z-index: 9999;
+            transform: translateY(100%);
+            transition: transform 0.7s cubic-bezier(0.7, 0, 0.3, 1);
+        }
+        
+        .page-transition.active {
+            transform: translateY(0);
+        }
+        
+        .page-transition.exit {
+            transform: translateY(-100%);
+        }
+        
+        /* Footer - Same as previous pages */
+        footer {
+            background-color: var(--dark-grey);
+            color: var(--light-grey);
+            padding: var(--spacing-lg) 0;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-md);
+        }
+        
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .footer-logo img {
+            height: 40px;
+        }
+        
+        .footer-logo-text {
+            margin-left: var(--spacing-xs);
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            color: var(--white);
+            letter-spacing: 2px;
+        }
+        
+        .footer-heading {
+            font-size: 1.2rem;
+            margin-bottom: var(--spacing-sm);
+            color: var(--white);
+            position: relative;
+        }
+        
+        .footer-heading::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--olive-light);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: var(--spacing-xs);
+        }
+        
+        .footer-links a {
+            color: var(--light-grey);
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--olive-pale);
+            padding-left: 5px;
+        }
+        
+        .footer-contact p {
+            margin-bottom: var(--spacing-xs);
+            font-size: 0.9rem;
+        }
+        
+        .footer-social {
+            display: flex;
+            gap: var(--spacing-sm);
+            margin-top: var(--spacing-sm);
+        }
+        
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            background-color: var(--olive-dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            transition: all 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            background-color: var(--olive-medium);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: var(--spacing-lg);
+            margin-top: var(--spacing-lg);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.8rem;
+            color: var(--medium-grey);
+        }
+        
+        /* Media Queries */
+        @media (max-width: 991px) {
+            h1 {
+                font-size: 3rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            .page-header h1 {
+                font-size: 3.5rem;
+            }
+        }
+        
+        @media (max-width: 767px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .page-header h1 {
+                font-size: 2.8rem;
+            }
+            
+            .page-header p {
+                font-size: 1rem;
+            }
+            
+            .header-container {
+                flex-direction: column;
+                padding: 1rem var(--spacing-md);
+            }
+            
+            .logo {
+                margin-bottom: var(--spacing-sm);
+            }
+            
+            nav {
+                width: 100%;
+            }
+            
+            nav ul {
+                justify-content: space-between;
+            }
+            
+            nav li {
+                margin-left: 0;
+            }
+            
+            .podcast-card,
+            .news-card,
+            .blog-card {
+                max-width: 350px;
+                margin: 0 auto;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+            }
+            
+            .newsletter-input {
+                width: 100%;
+                border-bottom: 1px solid var(--light-grey);
+            }
+            
+            .newsletter-btn {
+                width: 100%;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .page-header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .page-header {
+                height: 40vh;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Page Transition -->
     <div class="page-transition"></div>
-
+    
     <!-- Header -->
     <header>
         <div class="container header-container">
@@ -33,7 +531,7 @@
             </nav>
         </div>
     </header>
-
+    
     <!-- Page Header -->
     <section class="page-header">
         <div class="page-header-bg"></div>
@@ -45,7 +543,7 @@
             </div>
         </div>
     </section>
-
+    
     <!-- Podcasts Section -->
     <section class="section podcasts-section">
         <div class="container">
@@ -99,7 +597,7 @@
             </div>
         </div>
     </section>
-
+    
     <!-- News Articles Section -->
     <section class="section news-section">
         <div class="container">
@@ -156,7 +654,7 @@
             </div>
         </div>
     </section>
-
+    
     <!-- Blog Posts Section -->
     <section class="section blog-section">
         <div class="container">
@@ -235,7 +733,7 @@
             <a href="#" class="view-all">View All Blog Posts</a>
         </div>
     </section>
-
+    
     <!-- Newsletter Section -->
     <section class="section newsletter-section">
         <div class="container">
@@ -249,7 +747,7 @@
             </div>
         </div>
     </section>
-
+    
     <!-- Footer -->
     <footer>
         <div class="container">
@@ -281,9 +779,6 @@
                         <p>Address: Male, Maldives</p>
                         <div class="footer-social">
                             <a href="#" class="social-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
-                            </a>
-                            <a href="#" class="social-icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
                             </a>
                             <a href="#" class="social-icon">
@@ -303,6 +798,19 @@
     </footer>
 
     <!-- JavaScript -->
-    <script src="main.js"></script>
+    <script src="js/main.js"></script>
+
 </body>
-</html>
+</html>-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                            </a>
+                            <a href="#" class="social-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News | Atolluxe</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
