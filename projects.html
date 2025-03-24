@@ -421,7 +421,111 @@
     </footer>
 
     <!-- JavaScript -->
-    <script src="js/main.js"></script>
+    <script>
+        // Intersection Observer for animations
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('in-view');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Elements to observe
+        const elementsToAnimate = [
+            document.querySelector('.featured-project'),
+            document.querySelector('.investment-guide')
+        ];
+
+        // Add project cards
+        document.querySelectorAll('.project-card').forEach(card => {
+            elementsToAnimate.push(card);
+        });
+
+        // Start observing
+        elementsToAnimate.forEach(element => {
+            if (element) observer.observe(element);
+        });
+
+        // Header scroll effect
+        const header = document.querySelector('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Project filtering
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Remove active class from all buttons
+                filterBtns.forEach(btn => btn.classList.remove('active'));
+                
+                // Add active class to clicked button
+                this.classList.add('active');
+                
+                const filter = this.getAttribute('data-filter');
+                
+                projectCards.forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-category').includes(filter)) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Wishlist functionality
+        const wishlistBtns = document.querySelectorAll('.wishlist-btn');
+
+        wishlistBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                this.classList.toggle('active');
+            });
+        });
+
+        // Page transition
+        const pageTransition = document.querySelector('.page-transition');
+        const links = document.querySelectorAll('a:not([target="_blank"]):not([href^="#"])');
+
+        links.forEach(link => {
+            link.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                
+                e.preventDefault();
+                
+                // Start transition animation
+                pageTransition.classList.add('active');
+                
+                setTimeout(() => {
+                    window.location.href = href;
+                }, 700);
+            });
+        });
+
+        // Page load animation
+        window.addEventListener('load', () => {
+            pageTransition.classList.add('exit');
+            
+            setTimeout(() => {
+                pageTransition.classList.remove('active');
+                pageTransition.classList.remove('exit');
+            }, 700);
+        });
+    </script>
 </body>
 </html><!DOCTYPE html>
 <html lang="en">
@@ -1162,4 +1266,3 @@
         
         .footer-links {
             list-style
-
