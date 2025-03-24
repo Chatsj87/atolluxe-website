@@ -1,4 +1,45 @@
-<!DOCTYPE html>
+<!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div>
+                    <div class="footer-logo">
+                        <img src="/api/placeholder/100/50" alt="Atolluxe Logo">
+                        <span class="footer-logo-text">ATOLLUXE</span>
+                    </div>
+                    <p>Luxury investment properties in the paradise islands of the Maldives. Discover exceptional opportunities with high returns in the world's most sought-after destination.</p>
+                </div>
+                <div>
+                    <h3 class="footer-heading">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="locations.html">Locations</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="news.html">News</a></li>
+                        <li><a href="sales.html">Sales</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="footer-heading">Contact</h3>
+                    <div class="footer-contact">
+                        <p>Email: info@atolluxe.com</p>
+                        <p>Phone: +960 123 4567</p>
+                        <p>Address: Male, Maldives</p>
+                        <div class="footer-social">
+                            <a href="#" class="social-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                            </a>
+                            <a href="#" class="social-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                            </a>
+                            <a href="#" class="social-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+                            </a>
+                            <a href="#" class="social-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                            </a><!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,8 +48,34 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
-    <style>      
-        {
+    <style>
+        /* Base Styles */
+        :root {
+            /* Color Palette */
+            --olive-dark: #556b2f;
+            --olive-medium: #708238;
+            --olive-light: #8a9a5b;
+            --olive-pale: #b9c49c;
+            --cream: #f5f5dc;
+            --light-grey: #e5e5e5;
+            --medium-grey: #a9a9a9;
+            --dark-grey: #333333;
+            --black: #121212;
+            --white: #ffffff;
+            
+            /* Typography */
+            --font-heading: 'Cormorant Garamond', serif;
+            --font-body: 'Montserrat', sans-serif;
+            
+            /* Spacing */
+            --spacing-xs: 0.5rem;
+            --spacing-sm: 1rem;
+            --spacing-md: 2rem;
+            --spacing-lg: 4rem;
+            --spacing-xl: 8rem;
+        }
+        
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -83,7 +150,16 @@
             color: var(--olive-medium);
         }
         
-        /* Layout & Header - Same as previous pages */
+        ul {
+            margin-left: 1.5rem;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        li {
+            margin-bottom: var(--spacing-xs);
+        }
+        
+        /* Layout & Header */
         .container {
             width: 100%;
             max-width: 1400px;
@@ -148,14 +224,16 @@
             letter-spacing: 2px;
         }
         
-        /* Navigation - Same as previous pages */
+        /* Navigation */
         nav ul {
             display: flex;
             list-style: none;
+            margin: 0;
         }
         
         nav li {
             margin-left: var(--spacing-md);
+            margin-bottom: 0;
         }
         
         nav a {
@@ -266,6 +344,7 @@
             max-width: 600px;
         }
         
+        /* Buttons */
         .cta-btn {
             display: inline-block;
             background-color: var(--olive-dark);
@@ -434,6 +513,7 @@
         
         /* Attractions Section */
         .attractions-heading {
+            text-align: center;
             margin-bottom: var(--spacing-lg);
             opacity: 0;
             transform: translateY(30px);
@@ -517,8 +597,8 @@
         
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            grid-auto-rows: 250px;
+            grid-template-columns: repeat(3, 1fr);
+            grid-auto-rows: 300px;
             gap: var(--spacing-sm);
         }
         
@@ -548,33 +628,17 @@
             transition: transform 0.5s ease;
         }
         
-        .gallery-item:nth-child(4n+1) {
+        .gallery-item:first-child {
             grid-column: span 2;
-            grid-row: span 2;
+            grid-row: span 1;
         }
         
-        /* Page Transition - Same as previous pages */
-        .page-transition {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: var(--olive-dark);
-            z-index: 9999;
-            transform: translateY(100%);
-            transition: transform 0.7s cubic-bezier(0.7, 0, 0.3, 1);
+        .gallery-item:nth-child(5) {
+            grid-column: span 2;
+            grid-row: span 1;
         }
         
-        .page-transition.active {
-            transform: translateY(0);
-        }
-        
-        .page-transition.exit {
-            transform: translateY(-100%);
-        }
-        
-        /* Modal Gallery */
+        /* Gallery Modal */
         .gallery-modal {
             position: fixed;
             top: 0;
@@ -646,7 +710,67 @@
             right: 30px;
         }
         
-        /* Footer - Same as previous pages */
+        /* Location Section */
+        .location-section {
+            background-color: var(--white);
+        }
+        
+        .location-heading {
+            margin-bottom: var(--spacing-md);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s ease;
+        }
+        
+        .location-heading.in-view {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .location-map {
+            height: 500px;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-top: var(--spacing-md);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s ease 0.3s;
+        }
+        
+        .location-map.in-view {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .location-map img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        /* Page Transition */
+        .page-transition {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--olive-dark);
+            z-index: 9999;
+            transform: translateY(100%);
+            transition: transform 0.7s cubic-bezier(0.7, 0, 0.3, 1);
+        }
+        
+        .page-transition.active {
+            transform: translateY(0);
+        }
+        
+        .page-transition.exit {
+            transform: translateY(-100%);
+        }
+        
+        /* Footer */
         footer {
             background-color: var(--dark-grey);
             color: var(--light-grey);
@@ -696,6 +820,7 @@
         
         .footer-links {
             list-style: none;
+            margin-left: 0;
         }
         
         .footer-links li {
@@ -764,14 +889,22 @@
                 font-size: 3.5rem;
             }
             
+            .location-subtitle {
+                font-size: 1.6rem;
+            }
+            
             .location-overview {
                 grid-template-columns: 1fr;
                 gap: var(--spacing-md);
             }
             
-            .gallery-item:nth-child(4n+1) {
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .gallery-item:first-child,
+            .gallery-item:nth-child(5) {
                 grid-column: span 1;
-                grid-row: span 1;
             }
             
             .modal-prev {
@@ -794,6 +927,10 @@
             
             .location-hero h1 {
                 font-size: 2.8rem;
+            }
+            
+            .location-subtitle {
+                font-size: 1.4rem;
             }
             
             .location-hero p {
@@ -821,13 +958,9 @@
                 margin-left: 0;
             }
             
-            .stats-container {
-                justify-content: center;
-            }
-            
             .gallery-grid {
-                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-                grid-auto-rows: 200px;
+                grid-template-columns: 1fr;
+                grid-auto-rows: 250px;
             }
         }
         
@@ -840,13 +973,11 @@
                 font-size: 2.2rem;
             }
             
-            .location-subtitle {
-                font-size: 1.4rem;
-            }
-            
             .location-hero {
-                height: 60vh;
+                height: auto;
                 min-height: 500px;
+                padding-top: 150px;
+                padding-bottom: 50px;
             }
             
             .cta-btn {
@@ -854,6 +985,7 @@
                 width: 100%;
                 margin-right: 0;
                 margin-bottom: var(--spacing-sm);
+                text-align: center;
             }
             
             .location-video {
@@ -870,7 +1002,7 @@
 <body>
     <!-- Page Transition -->
     <div class="page-transition"></div>
-    
+
     <!-- Header -->
     <header>
         <div class="container header-container">
@@ -891,7 +1023,7 @@
             </nav>
         </div>
     </header>
-    
+
     <!-- Location Hero Section -->
     <section class="location-hero">
         <div class="location-hero-bg"></div>
@@ -906,7 +1038,7 @@
             </div>
         </div>
     </section>
-    
+
     <!-- Location Overview Section -->
     <section class="section">
         <div class="container">
@@ -923,7 +1055,7 @@
             </div>
         </div>
     </section>
-    
+
     <!-- Statistics Section -->
     <section class="stats-section">
         <div class="container">
@@ -1016,11 +1148,25 @@
                     <img src="/api/placeholder/300/300" alt="Tropical fruit farm" data-index="3">
                 </div>
                 <div class="gallery-item" style="transition-delay: 0.5s;">
-                    <img src="/api/placeholder/300/300" alt="Local fishing boats" data-index="4">
+                    <img src="/api/placeholder/600/300" alt="Swimming Pool" data-index="4">
                 </div>
                 <div class="gallery-item" style="transition-delay: 0.6s;">
                     <img src="/api/placeholder/300/300" alt="Beachfront dining" data-index="5">
                 </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Location Section -->
+    <section class="section location-section">
+        <div class="container">
+            <div class="location-heading">
+                <h2>Location</h2>
+                <p>The Palms is ideally situated on the stunning white sand beaches of Thoddoo Island, offering easy access to the island's natural attractions and amenities. Just 67 km from Male International Airport, the property is accessible via a 20-minute seaplane journey or a 1.5-hour speedboat ride.</p>
+                <p>The island's unique position provides exceptional diving and snorkeling opportunities, with vibrant coral reefs and rich marine life just steps from your villa. The central location within Alif Atoll also allows for convenient day trips to neighboring islands and exclusive resorts.</p>
+            </div>
+            <div class="location-map">
+                <img src="/api/placeholder/1200/500" alt="Map of The Palms location">
             </div>
         </div>
     </section>
@@ -1113,7 +1259,9 @@
             document.querySelector('.location-video'),
             document.querySelector('.stats-heading'),
             document.querySelector('.attractions-heading'),
-            document.querySelector('.gallery-heading')
+            document.querySelector('.gallery-heading'),
+            document.querySelector('.location-heading'),
+            document.querySelector('.location-map')
         ];
 
         // Add stat cards
@@ -1148,22 +1296,16 @@
 
         // Page transition
         const pageTransition = document.querySelector('.page-transition');
-        const links = document.querySelectorAll('a:not([target="_blank"])');
+        const links = document.querySelectorAll('a:not([target="_blank"]):not([href^="#"])');
 
         links.forEach(link => {
             link.addEventListener('click', function(e) {
                 const href = this.getAttribute('href');
-                
-                // Skip transition for links on same page
-                if (href.charAt(0) === '#' || href === window.location.href) {
-                    return;
-                }
-                
                 e.preventDefault();
-                
+
                 // Start transition animation
                 pageTransition.classList.add('active');
-                
+
                 setTimeout(() => {
                     window.location.href = href;
                 }, 700);
@@ -1173,17 +1315,16 @@
         // Page load animation
         window.addEventListener('load', () => {
             pageTransition.classList.add('exit');
-            
             setTimeout(() => {
                 pageTransition.classList.remove('active');
                 pageTransition.classList.remove('exit');
             }, 700);
         });
-        
+
         // Video play functionality
         const playBtn = document.querySelector('.play-btn');
         const locationVideo = document.querySelector('.location-video');
-        
+
         if (playBtn) {
             playBtn.addEventListener('click', function() {
                 // Here you would typically insert the actual video player
@@ -1191,7 +1332,7 @@
                 locationVideo.innerHTML = '<div style="width:100%; height:100%; display:flex; align-items:center; justify-content:center; font-size:1.2rem; color:var(--olive-dark);">Video would play here</div>';
             });
         }
-        
+
         // Gallery modal functionality
         const galleryItems = document.querySelectorAll('.gallery-item');
         const galleryModal = document.querySelector('.gallery-modal');
@@ -1199,53 +1340,71 @@
         const modalClose = document.querySelector('.modal-close');
         const modalPrev = document.querySelector('.modal-prev');
         const modalNext = document.querySelector('.modal-next');
-        
         let currentIndex = 0;
-        
+
         galleryItems.forEach(item => {
             item.addEventListener('click', function() {
                 const imgSrc = this.querySelector('img').getAttribute('src');
                 const imgAlt = this.querySelector('img').getAttribute('alt');
                 const index = parseInt(this.querySelector('img').dataset.index);
-                
+
                 modalImage.setAttribute('src', imgSrc);
                 modalImage.setAttribute('alt', imgAlt);
                 currentIndex = index;
-                
                 galleryModal.classList.add('active');
                 document.body.style.overflow = 'hidden';
             });
         });
-        
+
         modalClose.addEventListener('click', () => {
             galleryModal.classList.remove('active');
             document.body.style.overflow = 'auto';
         });
-        
+
         modalPrev.addEventListener('click', () => {
             currentIndex = (currentIndex === 0) ? galleryItems.length - 1 : currentIndex - 1;
             const imgSrc = galleryItems[currentIndex].querySelector('img').getAttribute('src');
             const imgAlt = galleryItems[currentIndex].querySelector('img').getAttribute('alt');
-            
             modalImage.setAttribute('src', imgSrc);
             modalImage.setAttribute('alt', imgAlt);
         });
-        
+
         modalNext.addEventListener('click', () => {
             currentIndex = (currentIndex === galleryItems.length - 1) ? 0 : currentIndex + 1;
             const imgSrc = galleryItems[currentIndex].querySelector('img').getAttribute('src');
             const imgAlt = galleryItems[currentIndex].querySelector('img').getAttribute('alt');
-            
             modalImage.setAttribute('src', imgSrc);
             modalImage.setAttribute('alt', imgAlt);
         });
-        
+
         // Close modal on escape key
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape' && galleryModal.classList.contains('active')) {
                 galleryModal.classList.remove('active');
                 document.body.style.overflow = 'auto';
             }
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    const headerHeight = document.querySelector('header').offsetHeight;
+                    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
         });
     </script>
 </body>
