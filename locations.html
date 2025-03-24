@@ -1,313 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Locations | Atolluxe</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
-    <style>
-        /* Base Styles - Same as previous pages */
-        :root {
-            /* Color Palette */
-            --olive-dark: #556b2f;
-            --olive-medium: #708238;
-            --olive-light: #8a9a5b;
-            --olive-pale: #b9c49c;
-            --cream: #f5f5dc;
-            --light-grey: #e5e5e5;
-            --medium-grey: #a9a9a9;
-            --dark-grey: #333333;
-            --black: #121212;
-            --white: #ffffff;
-            
-            /* Typography */
-            --font-heading: 'Cormorant Garamond', serif;
-            --font-body: 'Montserrat', sans-serif;
-            
-            /* Spacing */
-            --spacing-xs: 0.5rem;
-            --spacing-sm: 1rem;
-            --spacing-md: 2rem;
-            --spacing-lg: 4rem;
-            --spacing-xl: 8rem;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        html {
-            scroll-behavior: smooth;
-        }
-        
-        body {
-            font-family: var(--font-body);
-            font-weight: 300;
-            color: var(--dark-grey);
-            background-color: var(--cream);
-            overflow-x: hidden;
-            line-height: 1.6;
-        }
-        
-        h1, h2, h3, h4, h5, h6 {
-            font-family: var(--font-heading);
-            font-weight: 400;
-            line-height: 1.2;
-            color: var(--olive-dark);
-        }
-        
-        h1 {
-            font-size: 3.5rem;
-            margin-bottom: var(--spacing-md);
-            font-weight: 300;
-        }
-        
-        h2 {
-            font-size: 2.5rem;
-            margin-bottom: var(--spacing-sm);
-            position: relative;
-            display: inline-block;
-        }
-        
-        h2::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 0;
-            width: 60px;
-            height: 2px;
-            background-color: var(--olive-medium);
-            transition: width 0.3s ease;
-        }
-        
-        h2:hover::after {
-            width: 100%;
-        }
-        
-        h3 {
-            font-size: 1.8rem;
-            margin-bottom: var(--spacing-sm);
-        }
-        
-        p {
-            margin-bottom: var(--spacing-md);
-            font-size: 1rem;
-            line-height: 1.8;
-        }
-        
-        a {
-            color: var(--olive-dark);
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-        
-        a:hover {
-            color: var(--olive-medium);
-        }
-        
-        /* Layout & Header - Same as previous pages */
-        .container {
-            width: 100%;
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 var(--spacing-md);
-        }
-        
-        .section {
-            padding: var(--spacing-xl) 0;
-            position: relative;
-        }
-        
-        .section:nth-child(even) {
-            background-color: var(--white);
-        }
-        
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-            background-color: rgba(245, 245, 220, 0.95);
-            backdrop-filter: blur(5px);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            transition: all 0.5s ease;
-        }
-        
-        header.scrolled {
-            padding: 0.5rem 0;
-            background-color: rgba(245, 245, 220, 0.98);
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-        }
-        
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1.5rem var(--spacing-md);
-        }
-        
-        .logo {
-            display: flex;
-            align-items: center;
-        }
-        
-        .logo img {
-            height: 50px;
-            transition: all 0.3s ease;
-        }
-        
-        header.scrolled .logo img {
-            height: 40px;
-        }
-        
-        .logo-text {
-            margin-left: var(--spacing-xs);
-            font-family: var(--font-heading);
-            font-size: 1.8rem;
-            font-weight: 400;
-            color: var(--olive-dark);
-            letter-spacing: 2px;
-        }
-        
-        /* Navigation - Same as previous pages */
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-        
-        nav li {
-            margin-left: var(--spacing-md);
-        }
-        
-        nav a {
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: 400;
-            position: relative;
-            padding: 0.5rem 0;
-        }
-        
-        nav a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 1px;
-            background-color: var(--olive-medium);
-            transition: width 0.3s ease;
-        }
-        
-        nav a:hover::after {
-            width: 100%;
-        }
-        
-        nav a.active::after {
-            width: 100%;
-        }
-        
-        /* Page Header */
-        .page-header {
-            height: 50vh;
-            min-height: 400px;
-            display: flex;
-            align-items: center;
-            position: relative;
-            padding-top: 100px;
-            background-color: var(--light-grey);
-            overflow: hidden;
-        }
-        
-        .page-header-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url('/api/placeholder/1400/800');
-            background-size: cover;
-            background-position: center;
-            opacity: 0.8;
-        }
-        
-        .page-header-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to bottom, rgba(18, 18, 18, 0.4), rgba(85, 107, 47, 0.7));
-        }
-        
-        .page-header-content {
-            position: relative;
-            z-index: 1;
-            max-width: 800px;
-            color: var(--white);
-            opacity: 0;
-            transform: translateY(30px);
-            animation: fadeInUp 1s ease forwards 0.5s;
-        }
-        
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .page-header h1 {
-            color: var(--white);
-            font-size: 4rem;
-            margin-bottom: var(--spacing-sm);
-            line-height: 1.2;
-        }
-        
-        .page-header p {
-            font-size: 1.2rem;
-            margin-bottom: 0;
-            max-width: 600px;
-        }
-        
-        /* Map Section */
-        .map-section {
-            padding-bottom: 0;
-        }
-        
-        .map-heading {
-            text-align: center;
-            margin-bottom: var(--spacing-lg);
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 1s ease;
-        }
-        
-        .map-heading.in-view {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .map-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: var(--spacing-lg);
-            align-items: center;
-        }
-        
-        @media (max-width: 991px) {
-            .map-container {
-                grid-template-columns: 1fr;
-            }
-        }
-        
-        .maldives-map {
-            height: 600px;
+<style>
+height: 600px;
             position: relative;
             border-radius: 5px;
             overflow: hidden;
@@ -653,7 +345,7 @@
         }
         
         .stat-label {
-            font-size: 0.8rem;
+            font-size: 0.9rem;
             color: var(--medium-grey);
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -890,7 +582,7 @@
 <body>
     <!-- Page Transition -->
     <div class="page-transition"></div>
-
+    
     <!-- Header -->
     <header>
         <div class="container header-container">
@@ -911,7 +603,7 @@
             </nav>
         </div>
     </header>
-
+    
     <!-- Page Header -->
     <section class="page-header">
         <div class="page-header-bg"></div>
@@ -923,7 +615,7 @@
             </div>
         </div>
     </section>
-
+    
     <!-- Maldives Map Section -->
     <section class="section map-section">
         <div class="container">
@@ -995,3 +687,622 @@
                             <li>Potential for higher long-term appreciation</li>
                         </ul>
                         <a href="location-detail.html" class="cta-btn">Explore Vaavu Atoll</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Locations Card Section -->
+    <section class="section">
+        <div class="container">
+            <div class="locations-grid">
+                <div class="location-card" style="transition-delay: 0.1s;">
+                    <div class="location-image">
+                        <img src="/api/placeholder/400/300" alt="Dhiffushi Island, Kaafu Atoll">
+                    </div>
+                    <div class="location-overlay">
+                        <h3 class="location-name">Dhiffushi Island</h3>
+                        <p class="location-description">Located in Kaafu Atoll, Dhiffushi offers premium beachfront properties with excellent ROI potential.</p>
+                        <div class="location-cta">
+                            <a href="location-detail.html" class="location-btn">Explore</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="location-card" style="transition-delay: 0.3s;">
+                    <div class="location-image">
+                        <img src="/api/placeholder/400/300" alt="Thoddoo Island, Alif Atoll">
+                    </div>
+                    <div class="location-overlay">
+                        <h3 class="location-name">Thoddoo Island</h3>
+                        <p class="location-description">A unique island in Alif Atoll known for its fruit plantations, pristine beaches, and growing tourism sector.</p>
+                        <div class="location-cta">
+                            <a href="location-detail.html" class="location-btn">Explore</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="location-card" style="transition-delay: 0.5s;">
+                    <div class="location-image">
+                        <img src="/api/placeholder/400/300" alt="Hanimadhoo Island, Baa Atoll">
+                    </div>
+                    <div class="location-overlay">
+                        <h3 class="location-name">Hanimadhoo Island</h3>
+                        <p class="location-description">Positioned in the stunning UNESCO Biosphere Reserve of Baa Atoll, offering exclusive eco-luxury opportunities.</p>
+                        <div class="location-cta">
+                            <a href="location-detail.html" class="location-btn">Explore</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Features Section -->
+    <section class="section features-section">
+        <div class="container">
+            <div class="features-heading">
+                <h2>High Tourism ROI with Attractions</h2>
+                <p>Our locations have been carefully selected based on their exceptional investment potential</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card" style="transition-delay: 0.1s;">
+                    <div class="feature-icon">🏝️</div>
+                    <h3 class="feature-title">Premium Locations</h3>
+                    <p>Each property is situated on pristine beachfront land or offers spectacular ocean views, maximizing value and rental potential.</p>
+                </div>
+                <div class="feature-card" style="transition-delay: 0.3s;">
+                    <div class="feature-icon">🤿</div>
+                    <h3 class="feature-title">World-Class Diving</h3>
+                    <p>Our locations feature exceptional diving and snorkeling opportunities, attracting tourists year-round and ensuring consistent rental demand.</p>
+                </div>
+                <div class="feature-card" style="transition-delay: 0.5s;">
+                    <div class="feature-icon">🌴</div>
+                    <h3 class="feature-title">Natural Beauty</h3>
+                    <p>From UNESCO protected coral reefs to stunning beaches and lush tropical vegetation, each location offers unparalleled natural splendor.</p>
+                </div>
+                <div class="feature-card" style="transition-delay: 0.7s;">
+                    <div class="feature-icon">🚤</div>
+                    <h3 class="feature-title">Accessibility</h3>
+                    <p>All our properties are within convenient reach of international airports and offer seamless transfer options for guests.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Why Invest Section -->
+    <section class="section">
+        <div class="container">
+            <div class="why-invest">
+                <div class="why-invest-content">
+                    <h2>Why Invest in Maldives Real Estate</h2>
+                    <p>The Maldives property market represents one of the most promising investment opportunities in luxury real estate today. With growing tourism numbers, limited land availability, and increasing global recognition, properties in prime locations are seeing substantial year-over-year appreciation.</p>
+                    <p>Our carefully selected locations combine strong rental yields with exceptional capital appreciation potential, creating a compelling investment case for discerning investors.</p>
+                    <div class="stats-container">
+                        <div class="stat-item">
+                            <div class="stat-number">12%</div>
+                            <div class="stat-label">Average Annual ROI</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">15%</div>
+                            <div class="stat-label">Tourism Growth YoY</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">85%</div>
+                            <div class="stat-label">Occupancy Rate</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="why-invest-image">
+                    <img src="/api/placeholder/600/500" alt="Luxury villa investment in Maldives">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div>
+                    <div class="footer-logo">
+                        <img src="/api/placeholder/100/50" alt="Atolluxe Logo">
+                        <span class="footer-logo-text">ATOLLUXE</span>
+                    </div>
+                    <p>Luxury investment properties in the paradise islands of the Maldives. Discover exceptional opportunities with high returns in the world's most sought-after destination.</p>
+                </div>
+                <div>
+                    <h3 class="footer-heading">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="locations.html">Locations</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="news.html">News</a></li>
+                        <li><a href="sales.html">Sales</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="footer-heading">Contact</h3>
+                    <div class="footer-contact">
+                        <p>Email: info@atolluxe.com</p>
+                        <p>Phone: +960 123 4567</p>
+                        <p>Address: Male, Maldives</p>
+                        <div class="footer-social">
+                            <a href="#" class="social-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                            </a>
+                            <a href="#" class="social-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                            </a>
+                            <a href="#" class="social-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+                            </a>
+                            <a href="#" class="social-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Atolluxe. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Intersection Observer for animations
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('in-view');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Elements to observe
+        const elementsToAnimate = [
+            document.querySelector('.map-heading'),
+            document.querySelector('.maldives-map'),
+            document.querySelector('.map-info'),
+            document.querySelector('.features-heading'),
+            document.querySelector('.why-invest-content'),
+            document.querySelector('.why-invest-image')
+        ];
+
+        // Add location cards
+        document.querySelectorAll('.location-card').forEach(card => {
+            elementsToAnimate.push(card);
+        });
+
+        // Add feature cards
+        document.querySelectorAll('.feature-card').forEach(card => {
+            elementsToAnimate.push(card);
+        });
+
+        // Start observing
+        elementsToAnimate.forEach(element => {
+            if (element) observer.observe(element);
+        });
+
+        // Header scroll effect
+        const header = document.querySelector('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Map Tabs Functionality
+        const mapTabs = document.querySelectorAll('.map-tab');
+        const mapContents = document.querySelectorAll('.map-content');
+        const mapHotspots = document.querySelectorAll('.map-hotspot');
+
+        function activateTab(tabId) {
+            // Remove active class from all tabs and contents
+            mapTabs.forEach(tab => tab.classList.remove('active'));
+            mapContents.forEach(content => content.classList.remove('active'));
+            
+            // Add active class to clicked tab and corresponding content
+            document.querySelector(`.map-tab[data-tab="${tabId}"]`).classList.add('active');
+            document.getElementById(`${tabId}-content`).classList.add('active');
+        }
+
+        mapTabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+                const tabId = this.getAttribute('data-tab');
+                activateTab(tabId);
+            });
+        });
+
+        mapHotspots.forEach(hotspot => {
+            hotspot.addEventListener('click', function() {
+                const tabId = this.getAttribute('data-atoll');
+                activateTab(tabId);
+            });
+            
+            // Add tooltip effect
+            hotspot.addEventListener('mouseenter', function() {
+                const tabId = this.getAttribute('data-atoll');
+                const tabText = document.querySelector(`.map-tab[data-tab="${tabId}"]`).textContent;
+                
+                const tooltip = document.createElement('div');
+                tooltip.className = 'hotspot-tooltip';
+                tooltip.textContent = tabText;
+                tooltip.style.position = 'absolute';
+                tooltip.style.top = '-30px';
+                tooltip.style.left = '50%';
+                tooltip.style.transform = 'translateX(-50%)';
+                tooltip.style.backgroundColor = 'var(--olive-dark)';
+                tooltip.style.color = 'var(--white)';
+                tooltip.style.padding = '5px 10px';
+                tooltip.style.borderRadius = '3px';
+                tooltip.style.fontSize = '0.8rem';
+                tooltip.style.whiteSpace = 'nowrap';
+                tooltip.style.zIndex = '10';
+                
+                this.appendChild(tooltip);
+            });
+            
+            hotspot.addEventListener('mouseleave', function() {
+                const tooltip = this.querySelector('.hotspot-tooltip');
+                if (tooltip) {
+                    tooltip.remove();
+                }
+            });
+        });
+
+        // Page transition
+        const pageTransition = document.querySelector('.page-transition');
+        const links = document.querySelectorAll('a:not([target="_blank"]):not([href^="#"])');
+
+        links.forEach(link => {
+            link.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                
+                e.preventDefault();
+                
+                // Start transition animation
+                pageTransition.classList.add('active');
+                
+                setTimeout(() => {
+                    window.location.href = href;
+                }, 700);
+            });
+        });
+
+        // Page load animation
+        window.addEventListener('load', () => {
+            pageTransition.classList.add('exit');
+            
+            setTimeout(() => {
+                pageTransition.classList.remove('active');
+                pageTransition.classList.remove('exit');
+            }, 700);
+        });
+    </script>
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Locations | Atolluxe</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* Base Styles - Same as previous pages */
+        :root {
+            /* Color Palette */
+            --olive-dark: #556b2f;
+            --olive-medium: #708238;
+            --olive-light: #8a9a5b;
+            --olive-pale: #b9c49c;
+            --cream: #f5f5dc;
+            --light-grey: #e5e5e5;
+            --medium-grey: #a9a9a9;
+            --dark-grey: #333333;
+            --black: #121212;
+            --white: #ffffff;
+            
+            /* Typography */
+            --font-heading: 'Cormorant Garamond', serif;
+            --font-body: 'Montserrat', sans-serif;
+            
+            /* Spacing */
+            --spacing-xs: 0.5rem;
+            --spacing-sm: 1rem;
+            --spacing-md: 2rem;
+            --spacing-lg: 4rem;
+            --spacing-xl: 8rem;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: var(--font-body);
+            font-weight: 300;
+            color: var(--dark-grey);
+            background-color: var(--cream);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-heading);
+            font-weight: 400;
+            line-height: 1.2;
+            color: var(--olive-dark);
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: var(--spacing-md);
+            font-weight: 300;
+        }
+        
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: var(--spacing-sm);
+            position: relative;
+            display: inline-block;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background-color: var(--olive-medium);
+            transition: width 0.3s ease;
+        }
+        
+        h2:hover::after {
+            width: 100%;
+        }
+        
+        h3 {
+            font-size: 1.8rem;
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        p {
+            margin-bottom: var(--spacing-md);
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+        
+        a {
+            color: var(--olive-dark);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        a:hover {
+            color: var(--olive-medium);
+        }
+        
+        /* Layout & Header - Same as previous pages */
+        .container {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+        }
+        
+        .section {
+            padding: var(--spacing-xl) 0;
+            position: relative;
+        }
+        
+        .section:nth-child(even) {
+            background-color: var(--white);
+        }
+        
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: rgba(245, 245, 220, 0.95);
+            backdrop-filter: blur(5px);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.5s ease;
+        }
+        
+        header.scrolled {
+            padding: 0.5rem 0;
+            background-color: rgba(245, 245, 220, 0.98);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem var(--spacing-md);
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 50px;
+            transition: all 0.3s ease;
+        }
+        
+        header.scrolled .logo img {
+            height: 40px;
+        }
+        
+        .logo-text {
+            margin-left: var(--spacing-xs);
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            font-weight: 400;
+            color: var(--olive-dark);
+            letter-spacing: 2px;
+        }
+        
+        /* Navigation - Same as previous pages */
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav li {
+            margin-left: var(--spacing-md);
+        }
+        
+        nav a {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 400;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+        
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background-color: var(--olive-medium);
+            transition: width 0.3s ease;
+        }
+        
+        nav a:hover::after {
+            width: 100%;
+        }
+        
+        nav a.active::after {
+            width: 100%;
+        }
+        
+        /* Page Header */
+        .page-header {
+            height: 50vh;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding-top: 100px;
+            background-color: var(--light-grey);
+            overflow: hidden;
+        }
+        
+        .page-header-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('/api/placeholder/1400/800');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.8;
+        }
+        
+        .page-header-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(18, 18, 18, 0.4), rgba(85, 107, 47, 0.7));
+        }
+        
+        .page-header-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            color: var(--white);
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s ease forwards 0.5s;
+        }
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .page-header h1 {
+            color: var(--white);
+            font-size: 4rem;
+            margin-bottom: var(--spacing-sm);
+            line-height: 1.2;
+        }
+        
+        .page-header p {
+            font-size: 1.2rem;
+            margin-bottom: 0;
+            max-width: 600px;
+        }
+        
+        /* Map Section */
+        .map-section {
+            padding-bottom: 0;
+        }
+        
+        .map-heading {
+            text-align: center;
+            margin-bottom: var(--spacing-lg);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s ease;
+        }
+        
+        .map-heading.in-view {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .map-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-lg);
+            align-items: center;
+        }
+        
+        @media (max-width: 991px) {
+            .map-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .maldives-map {
+            height: 600px;
+            position: relative;
+            border-radius: 5px;
+            overflow:
