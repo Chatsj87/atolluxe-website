@@ -8,417 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
     <style>
-        /* Base Styles - Same as previous pages */
-        :root {
-            /* Color Palette */
-            --olive-dark: #556b2f;
-            --olive-medium: #708238;
-            --olive-light: #8a9a5b;
-            --olive-pale: #b9c49c;
-            --cream: #f5f5dc;
-            --light-grey: #e5e5e5;
-            --medium-grey: #a9a9a9;
-            --dark-grey: #333333;
-            --black: #121212;
-            --white: #ffffff;
-            
-            /* Typography */
-            --font-heading: 'Cormorant Garamond', serif;
-            --font-body: 'Montserrat', sans-serif;
-            
-            /* Spacing */
-            --spacing-xs: 0.5rem;
-            --spacing-sm: 1rem;
-            --spacing-md: 2rem;
-            --spacing-lg: 4rem;
-            --spacing-xl: 8rem;
-        }
-    </style>
-</head>
-<body>
-    <!-- Page Transition -->
-    <div class="page-transition"></div>
-    
-    <!-- Header -->
-    <header>
-        <div class="container header-container">
-            <a href="index.html" class="logo">
-                <img src="/api/placeholder/100/50" alt="Atolluxe Logo">
-                <span class="logo-text">ATOLLUXE</span>
-            </a>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="locations.html" class="active">Locations</a></li>
-                    <li><a href="projects.html">Projects</a></li>
-                    <li><a href="news.html">News</a></li>
-                    <li><a href="sales.html">Sales</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-    
-    <!-- Location Hero Section -->
-    <section class="location-hero">
-        <div class="location-hero-bg"></div>
-        <div class="location-hero-overlay"></div>
-        <div class="container">
-            <div class="location-hero-content">
-                <h1>Thoddoo Island</h1>
-                <div class="location-subtitle">Alif Atoll, Maldives</div>
-                <p>Discover an emerging paradise island known for its pristine beaches, vibrant coral reefs, and unique agricultural heritage.</p>
-                <a href="projects.html" class="cta-btn">View Projects</a>
-                <a href="contact.html" class="cta-btn secondary">Contact Us</a>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Location Overview Section -->
-    <section class="section">
-        <div class="container">
-            <div class="location-overview">
-                <div class="location-overview-content">
-                    <h2>High Tourism ROI with Attractions</h2>
-                    <p>Thoddoo Island represents one of the Maldives' most promising investment opportunities, combining authentic island charm with strategic tourism development potential. Unlike many resort islands, Thoddoo offers a unique blend of natural beauty, local culture, and distinctive agricultural heritage.</p>
-                    <p>With the expansion of the international airport and increasing demand for authentic experiences, Thoddoo is projected to see substantial growth in tourism over the next 5-10 years. The island's established guesthouse infrastructure and reputation for exceptional diving, farming experiences, and cultural immersion position it perfectly for premium property development.</p>
-                    <p>Atolluxe has secured prime beachfront locations on Thoddoo for our exclusive resort-style properties, offering investors early entry into a rapidly appreciating market.</p>
-                </div>
-                <div class="location-video">
-                    <div class="play-btn"></div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Statistics Section -->
-    <section class="stats-section">
-        <div class="container">
-            <div class="stats-heading">
-                <h2>Island Statistics</h2>
-                <p>Key data points that highlight Thoddoo's investment potential</p>
-            </div>
-            <div class="stats-container">
-                <div class="stat-card" style="transition-delay: 0.1s;">
-                    <div class="stat-icon">🏨</div>
-                    <div class="stat-number">45</div>
-                    <div class="stat-label">Current Rooms</div>
-                </div>
-                <div class="stat-card" style="transition-delay: 0.3s;">
-                    <div class="stat-icon">💲</div>
-                    <div class="stat-number">$150</div>
-                    <div class="stat-label">Average Daily Rate</div>
-                </div>
-                <div class="stat-card" style="transition-delay: 0.5s;">
-                    <div class="stat-icon">📈</div>
-                    <div class="stat-number">18%</div>
-                    <div class="stat-label">Annual Growth</div>
-                </div>
-                <div class="stat-card" style="transition-delay: 0.7s;">
-                    <div class="stat-icon">🌊</div>
-                    <div class="stat-number">12</div>
-                    <div class="stat-label">Diving Sites</div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Attractions Section -->
-    <section class="section">
-        <div class="container">
-            <div class="attractions-heading">
-                <h2>Island Attractions</h2>
-                <p>Experience the unique offerings that make Thoddoo an exceptional destination</p>
-            </div>
-            <div class="attractions-grid">
-                <div class="attraction-card" style="transition-delay: 0.1s;">
-                    <div class="attraction-image">
-                        <img src="/api/placeholder/400/300" alt="Diving at Thoddoo">
-                    </div>
-                    <div class="attraction-content">
-                        <h3>Diving</h3>
-                        <p>Explore vibrant coral gardens, dramatic drop-offs, and encounters with manta rays, reef sharks, and an abundance of tropical fish. Thoddoo is surrounded by pristine dive sites accessible directly from the shore.</p>
-                    </div>
-                </div>
-                <div class="attraction-card" style="transition-delay: 0.3s;">
-                    <div class="attraction-image">
-                        <img src="/api/placeholder/400/300" alt="Cultural Experience">
-                    </div>
-                    <div class="attraction-content">
-                        <h3>Cultural Experience</h3>
-                        <p>Immerse yourself in authentic Maldivian island life through cultural performances, traditional crafts, and interactions with the friendly local community that maintains its rich heritage.</p>
-                    </div>
-                </div>
-                <div class="attraction-card" style="transition-delay: 0.5s;">
-                    <div class="attraction-image">
-                        <img src="/api/placeholder/400/300" alt="Farming">
-                    </div>
-                    <div class="attraction-content">
-                        <h3>Farming</h3>
-                        <p>Unique among Maldivian islands, Thoddoo is renowned for its agricultural heritage, producing tropical fruits and vegetables in its fertile central area. Visitors can tour working farms and taste fresh tropical produce.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Gallery Section -->
-    <section class="section gallery-section">
-        <div class="container">
-            <div class="gallery-heading">
-                <h2>Gallery</h2>
-                <p>Visual highlights of Thoddoo Island's stunning landscapes and experiences</p>
-            </div>
-            <div class="gallery-grid">
-                <div class="gallery-item" style="transition-delay: 0.1s;">
-                    <img src="/api/placeholder/600/600" alt="Aerial view of Thoddoo" data-index="0">
-                </div>
-                <div class="gallery-item" style="transition-delay: 0.2s;">
-                    <img src="/api/placeholder/300/300" alt="Beach at sunset" data-index="1">
-                </div>
-                <div class="gallery-item" style="transition-delay: 0.3s;">
-                    <img src="/api/placeholder/300/300" alt="Snorkeling experience" data-index="2">
-                </div>
-                <div class="gallery-item" style="transition-delay: 0.4s;">
-                    <img src="/api/placeholder/300/300" alt="Tropical fruit farm" data-index="3">
-                </div>
-                <div class="gallery-item" style="transition-delay: 0.5s;">
-                    <img src="/api/placeholder/300/300" alt="Local fishing boats" data-index="4">
-                </div>
-                <div class="gallery-item" style="transition-delay: 0.6s;">
-                    <img src="/api/placeholder/300/300" alt="Beachfront dining" data-index="5">
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Gallery Modal -->
-    <div class="gallery-modal">
-        <img src="" alt="" class="modal-image">
-        <div class="modal-close">×</div>
-        <div class="modal-prev">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
-        </div>
-        <div class="modal-next">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-        </div>
-    </div>
-    
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-container">
-                <div>
-                    <div class="footer-logo">
-                        <img src="/api/placeholder/100/50" alt="Atolluxe Logo">
-                        <span class="footer-logo-text">ATOLLUXE</span>
-                    </div>
-                    <p>Luxury investment properties in the paradise islands of the Maldives. Discover exceptional opportunities with high returns in the world's most sought-after destination.</p>
-                </div>
-                <div>
-                    <h3 class="footer-heading">Quick Links</h3>
-                    <ul class="footer-links">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="locations.html">Locations</a></li>
-                        <li><a href="projects.html">Projects</a></li>
-                        <li><a href="news.html">News</a></li>
-                        <li><a href="sales.html">Sales</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="footer-heading">Contact</h3>
-                    <div class="footer-contact">
-                        <p>Email: info@atolluxe.com</p>
-                        <p>Phone: +960 123 4567</p>
-                        <p>Address: Male, Maldives</p>
-                        <div class="footer-social">
-                            <a href="#" class="social-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
-                            </a>
-                            <a href="#" class="social-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-                            </a>
-                            <a href="#" class="social-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
-                            </a>
-                            <a href="#" class="social-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="copyright">
-                <p>&copy; 2025 Atolluxe. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- JavaScript -->
-    <script>
-        // Intersection Observer for animations
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.1
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('in-view');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, observerOptions);
-
-        // Elements to observe
-        const elementsToAnimate = [
-            document.querySelector('.location-overview-content'),
-            document.querySelector('.location-video'),
-            document.querySelector('.stats-heading'),
-            document.querySelector('.attractions-heading'),
-            document.querySelector('.gallery-heading')
-        ];
-
-        // Add stat cards
-        document.querySelectorAll('.stat-card').forEach(card => {
-            elementsToAnimate.push(card);
-        });
-
-        // Add attraction cards
-        document.querySelectorAll('.attraction-card').forEach(card => {
-            elementsToAnimate.push(card);
-        });
-
-        // Add gallery items
-        document.querySelectorAll('.gallery-item').forEach(item => {
-            elementsToAnimate.push(item);
-        });
-
-        // Start observing
-        elementsToAnimate.forEach(element => {
-            if (element) observer.observe(element);
-        });
-
-        // Header scroll effect
-        const header = document.querySelector('header');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 100) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
-
-        // Page transition
-        const pageTransition = document.querySelector('.page-transition');
-        const links = document.querySelectorAll('a:not([target="_blank"])');
-
-        links.forEach(link => {
-            link.addEventListener('click', function(e) {
-                const href = this.getAttribute('href');
                 
-                // Skip transition for links on same page
-                if (href.charAt(0) === '#' || href === window.location.href) {
-                    return;
-                }
-                
-                e.preventDefault();
-                
-                // Start transition animation
-                pageTransition.classList.add('active');
-                
-                setTimeout(() => {
-                    window.location.href = href;
-                }, 700);
-            });
-        });
-
-        // Page load animation
-        window.addEventListener('load', () => {
-            pageTransition.classList.add('exit');
-            
-            setTimeout(() => {
-                pageTransition.classList.remove('active');
-                pageTransition.classList.remove('exit');
-            }, 700);
-        });
-        
-        // Video play functionality
-        const playBtn = document.querySelector('.play-btn');
-        const locationVideo = document.querySelector('.location-video');
-        
-        if (playBtn) {
-            playBtn.addEventListener('click', function() {
-                // Here you would typically insert the actual video player
-                // For demo purposes, we'll just change the background
-                locationVideo.innerHTML = '<div style="width:100%; height:100%; display:flex; align-items:center; justify-content:center; font-size:1.2rem; color:var(--olive-dark);">Video would play here</div>';
-            });
-        }
-        
-        // Gallery modal functionality
-        const galleryItems = document.querySelectorAll('.gallery-item');
-        const galleryModal = document.querySelector('.gallery-modal');
-        const modalImage = document.querySelector('.modal-image');
-        const modalClose = document.querySelector('.modal-close');
-        const modalPrev = document.querySelector('.modal-prev');
-        const modalNext = document.querySelector('.modal-next');
-        
-        let currentIndex = 0;
-        
-        galleryItems.forEach(item => {
-            item.addEventListener('click', function() {
-                const imgSrc = this.querySelector('img').getAttribute('src');
-                const imgAlt = this.querySelector('img').getAttribute('alt');
-                const index = parseInt(this.querySelector('img').dataset.index);
-                
-                modalImage.setAttribute('src', imgSrc);
-                modalImage.setAttribute('alt', imgAlt);
-                currentIndex = index;
-                
-                galleryModal.classList.add('active');
-                document.body.style.overflow = 'hidden';
-            });
-        });
-        
-        modalClose.addEventListener('click', () => {
-            galleryModal.classList.remove('active');
-            document.body.style.overflow = 'auto';
-        });
-        
-        modalPrev.addEventListener('click', () => {
-            currentIndex = (currentIndex === 0) ? galleryItems.length - 1 : currentIndex - 1;
-            const imgSrc = galleryItems[currentIndex].querySelector('img').getAttribute('src');
-            const imgAlt = galleryItems[currentIndex].querySelector('img').getAttribute('alt');
-            
-            modalImage.setAttribute('src', imgSrc);
-            modalImage.setAttribute('alt', imgAlt);
-        });
-        
-        modalNext.addEventListener('click', () => {
-            currentIndex = (currentIndex === galleryItems.length - 1) ? 0 : currentIndex + 1;
-            const imgSrc = galleryItems[currentIndex].querySelector('img').getAttribute('src');
-            const imgAlt = galleryItems[currentIndex].querySelector('img').getAttribute('alt');
-            
-            modalImage.setAttribute('src', imgSrc);
-            modalImage.setAttribute('alt', imgAlt);
-        });
-        
-        // Close modal on escape key
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && galleryModal.classList.contains('active')) {
-                galleryModal.classList.remove('active');
-                document.body.style.overflow = 'auto';
-            }
-        });
-    </script>
-</body>
-</html>
-        
         * {
             margin: 0;
             padding: 0;
@@ -1276,3 +866,388 @@
                 display: none;
             }
         }
+    </style>
+</head>
+<body>
+    <!-- Page Transition -->
+    <div class="page-transition"></div>
+    
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="/api/placeholder/100/50" alt="Atolluxe Logo">
+                <span class="logo-text">ATOLLUXE</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="locations.html" class="active">Locations</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="news.html">News</a></li>
+                    <li><a href="sales.html">Sales</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Location Hero Section -->
+    <section class="location-hero">
+        <div class="location-hero-bg"></div>
+        <div class="location-hero-overlay"></div>
+        <div class="container">
+            <div class="location-hero-content">
+                <h1>Thoddoo Island</h1>
+                <div class="location-subtitle">Alif Atoll, Maldives</div>
+                <p>Discover an emerging paradise island known for its pristine beaches, vibrant coral reefs, and unique agricultural heritage.</p>
+                <a href="projects.html" class="cta-btn">View Projects</a>
+                <a href="contact.html" class="cta-btn secondary">Contact Us</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Location Overview Section -->
+    <section class="section">
+        <div class="container">
+            <div class="location-overview">
+                <div class="location-overview-content">
+                    <h2>High Tourism ROI with Attractions</h2>
+                    <p>Thoddoo Island represents one of the Maldives' most promising investment opportunities, combining authentic island charm with strategic tourism development potential. Unlike many resort islands, Thoddoo offers a unique blend of natural beauty, local culture, and distinctive agricultural heritage.</p>
+                    <p>With the expansion of the international airport and increasing demand for authentic experiences, Thoddoo is projected to see substantial growth in tourism over the next 5-10 years. The island's established guesthouse infrastructure and reputation for exceptional diving, farming experiences, and cultural immersion position it perfectly for premium property development.</p>
+                    <p>Atolluxe has secured prime beachfront locations on Thoddoo for our exclusive resort-style properties, offering investors early entry into a rapidly appreciating market.</p>
+                </div>
+                <div class="location-video">
+                    <div class="play-btn"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Statistics Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-heading">
+                <h2>Island Statistics</h2>
+                <p>Key data points that highlight Thoddoo's investment potential</p>
+            </div>
+            <div class="stats-container">
+                <div class="stat-card" style="transition-delay: 0.1s;">
+                    <div class="stat-icon">🏨</div>
+                    <div class="stat-number">45</div>
+                    <div class="stat-label">Current Rooms</div>
+                </div>
+                <div class="stat-card" style="transition-delay: 0.3s;">
+                    <div class="stat-icon">💲</div>
+                    <div class="stat-number">$150</div>
+                    <div class="stat-label">Average Daily Rate</div>
+                </div>
+                <div class="stat-card" style="transition-delay: 0.5s;">
+                    <div class="stat-icon">📈</div>
+                    <div class="stat-number">18%</div>
+                    <div class="stat-label">Annual Growth</div>
+                </div>
+                <div class="stat-card" style="transition-delay: 0.7s;">
+                    <div class="stat-icon">🌊</div>
+                    <div class="stat-number">12</div>
+                    <div class="stat-label">Diving Sites</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Attractions Section -->
+    <section class="section">
+        <div class="container">
+            <div class="attractions-heading">
+                <h2>Island Attractions</h2>
+                <p>Experience the unique offerings that make Thoddoo an exceptional destination</p>
+            </div>
+            <div class="attractions-grid">
+                <div class="attraction-card" style="transition-delay: 0.1s;">
+                    <div class="attraction-image">
+                        <img src="/api/placeholder/400/300" alt="Diving at Thoddoo">
+                    </div>
+                    <div class="attraction-content">
+                        <h3>Diving</h3>
+                        <p>Explore vibrant coral gardens, dramatic drop-offs, and encounters with manta rays, reef sharks, and an abundance of tropical fish. Thoddoo is surrounded by pristine dive sites accessible directly from the shore.</p>
+                    </div>
+                </div>
+                <div class="attraction-card" style="transition-delay: 0.3s;">
+                    <div class="attraction-image">
+                        <img src="/api/placeholder/400/300" alt="Cultural Experience">
+                    </div>
+                    <div class="attraction-content">
+                        <h3>Cultural Experience</h3>
+                        <p>Immerse yourself in authentic Maldivian island life through cultural performances, traditional crafts, and interactions with the friendly local community that maintains its rich heritage.</p>
+                    </div>
+                </div>
+                <div class="attraction-card" style="transition-delay: 0.5s;">
+                    <div class="attraction-image">
+                        <img src="/api/placeholder/400/300" alt="Farming">
+                    </div>
+                    <div class="attraction-content">
+                        <h3>Farming</h3>
+                        <p>Unique among Maldivian islands, Thoddoo is renowned for its agricultural heritage, producing tropical fruits and vegetables in its fertile central area. Visitors can tour working farms and taste fresh tropical produce.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Gallery Section -->
+    <section class="section gallery-section">
+        <div class="container">
+            <div class="gallery-heading">
+                <h2>Gallery</h2>
+                <p>Visual highlights of Thoddoo Island's stunning landscapes and experiences</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item" style="transition-delay: 0.1s;">
+                    <img src="/api/placeholder/600/600" alt="Aerial view of Thoddoo" data-index="0">
+                </div>
+                <div class="gallery-item" style="transition-delay: 0.2s;">
+                    <img src="/api/placeholder/300/300" alt="Beach at sunset" data-index="1">
+                </div>
+                <div class="gallery-item" style="transition-delay: 0.3s;">
+                    <img src="/api/placeholder/300/300" alt="Snorkeling experience" data-index="2">
+                </div>
+                <div class="gallery-item" style="transition-delay: 0.4s;">
+                    <img src="/api/placeholder/300/300" alt="Tropical fruit farm" data-index="3">
+                </div>
+                <div class="gallery-item" style="transition-delay: 0.5s;">
+                    <img src="/api/placeholder/300/300" alt="Local fishing boats" data-index="4">
+                </div>
+                <div class="gallery-item" style="transition-delay: 0.6s;">
+                    <img src="/api/placeholder/300/300" alt="Beachfront dining" data-index="5">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Gallery Modal -->
+    <div class="gallery-modal">
+        <img src="" alt="" class="modal-image">
+        <div class="modal-close">×</div>
+        <div class="modal-prev">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+        </div>
+        <div class="modal-next">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div>
+                    <div class="footer-logo">
+                        <img src="/api/placeholder/100/50" alt="Atolluxe Logo">
+                        <span class="footer-logo-text">ATOLLUXE</span>
+                    </div>
+                    <p>Luxury investment properties in the paradise islands of the Maldives. Discover exceptional opportunities with high returns in the world's most sought-after destination.</p>
+                </div>
+                <div>
+                    <h3 class="footer-heading">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="locations.html">Locations</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="news.html">News</a></li>
+                        <li><a href="sales.html">Sales</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="footer-heading">Contact</h3>
+                    <div class="footer-contact">
+                        <p>Email: info@atolluxe.com</p>
+                        <p>Phone: +960 123 4567</p>
+                        <p>Address: Male, Maldives</p>
+                        <div class="footer-social">
+                            <a href="#" class="social-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                            </a>
+                            <a href="#" class="social-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                            </a>
+                            <a href="#" class="social-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+                            </a>
+                            <a href="#" class="social-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Atolluxe. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Intersection Observer for animations
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('in-view');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Elements to observe
+        const elementsToAnimate = [
+            document.querySelector('.location-overview-content'),
+            document.querySelector('.location-video'),
+            document.querySelector('.stats-heading'),
+            document.querySelector('.attractions-heading'),
+            document.querySelector('.gallery-heading')
+        ];
+
+        // Add stat cards
+        document.querySelectorAll('.stat-card').forEach(card => {
+            elementsToAnimate.push(card);
+        });
+
+        // Add attraction cards
+        document.querySelectorAll('.attraction-card').forEach(card => {
+            elementsToAnimate.push(card);
+        });
+
+        // Add gallery items
+        document.querySelectorAll('.gallery-item').forEach(item => {
+            elementsToAnimate.push(item);
+        });
+
+        // Start observing
+        elementsToAnimate.forEach(element => {
+            if (element) observer.observe(element);
+        });
+
+        // Header scroll effect
+        const header = document.querySelector('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Page transition
+        const pageTransition = document.querySelector('.page-transition');
+        const links = document.querySelectorAll('a:not([target="_blank"])');
+
+        links.forEach(link => {
+            link.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                
+                // Skip transition for links on same page
+                if (href.charAt(0) === '#' || href === window.location.href) {
+                    return;
+                }
+                
+                e.preventDefault();
+                
+                // Start transition animation
+                pageTransition.classList.add('active');
+                
+                setTimeout(() => {
+                    window.location.href = href;
+                }, 700);
+            });
+        });
+
+        // Page load animation
+        window.addEventListener('load', () => {
+            pageTransition.classList.add('exit');
+            
+            setTimeout(() => {
+                pageTransition.classList.remove('active');
+                pageTransition.classList.remove('exit');
+            }, 700);
+        });
+        
+        // Video play functionality
+        const playBtn = document.querySelector('.play-btn');
+        const locationVideo = document.querySelector('.location-video');
+        
+        if (playBtn) {
+            playBtn.addEventListener('click', function() {
+                // Here you would typically insert the actual video player
+                // For demo purposes, we'll just change the background
+                locationVideo.innerHTML = '<div style="width:100%; height:100%; display:flex; align-items:center; justify-content:center; font-size:1.2rem; color:var(--olive-dark);">Video would play here</div>';
+            });
+        }
+        
+        // Gallery modal functionality
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        const galleryModal = document.querySelector('.gallery-modal');
+        const modalImage = document.querySelector('.modal-image');
+        const modalClose = document.querySelector('.modal-close');
+        const modalPrev = document.querySelector('.modal-prev');
+        const modalNext = document.querySelector('.modal-next');
+        
+        let currentIndex = 0;
+        
+        galleryItems.forEach(item => {
+            item.addEventListener('click', function() {
+                const imgSrc = this.querySelector('img').getAttribute('src');
+                const imgAlt = this.querySelector('img').getAttribute('alt');
+                const index = parseInt(this.querySelector('img').dataset.index);
+                
+                modalImage.setAttribute('src', imgSrc);
+                modalImage.setAttribute('alt', imgAlt);
+                currentIndex = index;
+                
+                galleryModal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+        
+        modalClose.addEventListener('click', () => {
+            galleryModal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+        
+        modalPrev.addEventListener('click', () => {
+            currentIndex = (currentIndex === 0) ? galleryItems.length - 1 : currentIndex - 1;
+            const imgSrc = galleryItems[currentIndex].querySelector('img').getAttribute('src');
+            const imgAlt = galleryItems[currentIndex].querySelector('img').getAttribute('alt');
+            
+            modalImage.setAttribute('src', imgSrc);
+            modalImage.setAttribute('alt', imgAlt);
+        });
+        
+        modalNext.addEventListener('click', () => {
+            currentIndex = (currentIndex === galleryItems.length - 1) ? 0 : currentIndex + 1;
+            const imgSrc = galleryItems[currentIndex].querySelector('img').getAttribute('src');
+            const imgAlt = galleryItems[currentIndex].querySelector('img').getAttribute('alt');
+            
+            modalImage.setAttribute('src', imgSrc);
+            modalImage.setAttribute('alt', imgAlt);
+        });
+        
+        // Close modal on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && galleryModal.classList.contains('active')) {
+                galleryModal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+    </script>
+</body>
+</html>
